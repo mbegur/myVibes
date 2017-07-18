@@ -3,11 +3,13 @@ import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
+    super(props);
     console.log(this.props);
     this.state = {
       username: '',
       password: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,8 +27,12 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.procesForm({ user });
+    this.props.processForm({user: this.state});
   }
+  //
+  // handleLogin(e) {
+  //   this.props.formType
+  // }
 
   navLink() {
     if (this.props.formType === 'login') {
@@ -80,7 +86,9 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-}
 
 
 }
+
+
+export default SessionForm;
