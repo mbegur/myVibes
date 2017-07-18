@@ -16,6 +16,7 @@
       source: 'some_url'
       }
     }
+    currentSong: song_id
   },
   users: [
     {
@@ -28,15 +29,11 @@
       image: 'some_url'
     }
   ],
-  currentSong: {
-    title: 'Best I Ever Had',
-    artist_id: 1,
-    image_url: 'google.com/images/Drake',
-    genre: 'Hip-Hop',
-    song_details: {
-      source: 'some_url',
-      length: '4:18',
-      waveform: 'some_url'
+  audio: {
+    currentState {
+      paused: boolean,
+      volume: integer
+    }
   },
   comments: {
     1: {
