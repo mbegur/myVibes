@@ -13,7 +13,7 @@
       artist_id: 1,
       image_url: 'google.com/images/Drake',
       genre: 'Hip-Hop',
-      source: 'someurl'
+      source: 'some_url'
       }
     }
   },
@@ -34,9 +34,9 @@
     image_url: 'google.com/images/Drake',
     genre: 'Hip-Hop',
     song_details: {
-      source: 'cloudinary.com/song1',
+      source: 'some_url',
       length: '4:18',
-      waveform: 'cloudinary.com/waveform1'
+      waveform: 'some_url'
   },
   comments: {
     1: {
