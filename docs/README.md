@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-myVibes, inspired by SoundCloud, is a web application  built using Ruby on Rails and React/Redux. By the end of Week 9 this app will at least include the following criteria with smooth, bug-free navigation, seed data, and satisfactory CSS styling:
+myVibes, inspired by SoundCloud, is a web application  built using Ruby on Rails and React/Redux. By the end of this project this app will at least include the following criteria with smooth, bug-free navigation, seed data, and satisfactory CSS styling:
 
 - [ ] Production README
 - [ ] Hosting on Heroku
