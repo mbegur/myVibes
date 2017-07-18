@@ -16,9 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-// .gitignore
-
-// ... a bunch of preloaded ignores
 
 // To add:
 node_modules/
