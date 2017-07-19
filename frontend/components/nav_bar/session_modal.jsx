@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import SessionFormContainer from '../session/session_form_container';
+import LoginFormContainer from '../session/log_in_container';
+import SignupFormContainer from '../session/sign_up_container';
+
 
 const customStyles = {
   content : {
@@ -22,46 +26,54 @@ class SessionModal extends React.Component {
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
-  }
+  //
+  // afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   this.subtitle.style.color = '#f00';
+  // }
 
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
   render() {
+    let formType;
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
+        {this.props.formType === "signup" ? <div>
+          <button onClick={this.openModal}>Sign Up</button>
+          <Modal
           isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
+
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
-        >
+          contentLabel="Session Modal">
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
-          <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form>
+          <SignupFormContainer formType={"signup"} />
+
+        </Modal></div> : <div>
+        <button onClick={this.openModal}>Log In</button>
+          <Modal
+          isOpen={this.state.modalIsOpen}
+
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Session Modal">
+
+          <LoginFormContainer formType={"login"} />
+
         </Modal>
+        </div>
+
+            }
+
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import AuthModal from './auth_modal';
+import SessionModal from './session_modal';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -26,11 +26,9 @@ class NavBar extends React.Component {
           <div>
             <button onClick={this.logOutUser}>Log Out</button>
           </div> : <div>
-            <button onClick={this.handleDemoLogin}>Demo Log In</button>
-            &nbsp;
-            <Link to="/login"><button>Log In</button></Link>
-            &nbsp;
-            <Link to="/signup"><button>Sign Up</button></Link>
+            <button className="pure-button pure-button-active" onClick={this.handleDemoLogin}>Demo Log In</button>
+            <button className="pure-button pure-button-active"><SessionModal formType={"signup"}/></button>
+            <button className="pure-button pure-button-active"><SessionModal formType={"login"}/></button>
           </div>
         }
       </div>
