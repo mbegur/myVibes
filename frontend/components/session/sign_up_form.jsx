@@ -10,7 +10,7 @@ class Signup extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.switchForm = this.switchForm.bind(this);
-    // this.handleGuestLogin = this.handleGuestLogin.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   update(field) {
@@ -23,22 +23,14 @@ class Signup extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.signup(user).then(() => this.props.history.push("/"));
-    // .then(() => this.props.closeSignupModal())
   }
 
-  // handleGuestLogin(e) {
-  //   e.preventDefault();
-  //   this.props.login({username: "guest", password: "password"})
-  //     .then(() => this.props.closeSignupModal())
-  //     .then(() => this.props.history.push("/"));
-  // }
-  //
-  // switchForm(e) {
-  //   e.preventDefault();
-  //   this.props.closeSignupModal();
-  //   this.props.openLoginModal();
-  //   this.props.receiveErrors([]);
-  // }
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.props.login({user: {username: "guestuser", password: "123456"}})
+    .then(() => this.props.history.push("/"));
+  }
+
 
   renderErrors() {
     return(
@@ -72,6 +64,7 @@ class Signup extends React.Component {
               className="login-input"
             />
             <input type="submit" value="Sign up" />
+            <input type="submit" value="Demo login" onClick={this.handleDemoLogin} />
 
             <div className="login-form-text">
 
@@ -86,9 +79,5 @@ class Signup extends React.Component {
 
 export default withRouter(Signup);
 
-// <div className="switch-form">
-//   Already have an account?
-//   <a href="#" onClick={this.switchForm}> Log in</a>
-// </div>
 
 // <input type="submit" value="Guest login" onClick={this.handleGuestLogin} />

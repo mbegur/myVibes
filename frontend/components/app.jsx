@@ -12,7 +12,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 const App = () => (
   <div className='app'>
-    <h1>myVibes</h1>
     <NavBarContainer />
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />

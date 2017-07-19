@@ -21,14 +21,28 @@ class NavBar extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="hero-image">
         {this.props.currentUser ?
-          <div>
-            <button onClick={this.logOutUser}>Log Out</button>
-          </div> : <div>
-            <button className="pure-button pure-button-active" onClick={this.handleDemoLogin}>Demo Log In</button>
-            <button className="pure-button pure-button-active"><SessionModal formType={"signup"}/></button>
-            <button className="pure-button pure-button-active"><SessionModal formType={"login"}/></button>
+          <div className="if-user-logged-in">
+
+            <div className="header">
+              <h1>myVibes</h1>
+            </div>
+            <div className="auth-buttons">
+              <button className="auth-buts" onClick={this.logOutUser}>Log Out</button>
+            </div>
+          </div> : <div className="if-user-logged-out">
+          <div className="header">
+            <h1>myVibes</h1>
+          </div>
+          <div className="auth-buttons">
+            <button className="auth-buts" onClick={this.handleDemoLogin}>Demo Log In</button>
+            &nbsp;
+            <button className="auth-buts"><SessionModal className="auth-buts" formType={"signup"}/></button>
+            &nbsp;
+            <button className="auth-buts"><SessionModal className="auth-buts" formType={"login"}/></button>
+          </div>
+
           </div>
         }
       </div>

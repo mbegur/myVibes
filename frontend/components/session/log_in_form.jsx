@@ -9,7 +9,6 @@ class Login extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.switchForm = this.switchForm.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
@@ -31,13 +30,8 @@ class Login extends React.Component {
     .then(() => this.props.history.push("/"));
   }
 
-  //
-  // switchForm(e) {
-  //   e.preventDefault();
-  //   this.props.closeLoginModal();
-  //   this.props.openSignupModal();
-  //   this.props.receiveErrors([]);
-  // }
+
+
 
   renderErrors() {
     return(
@@ -70,7 +64,7 @@ class Login extends React.Component {
               value={this.state.password}
             />
             <input type="submit" value="Log in" />
-            <input type="submit" value="Guest login" onClick={this.handleDemoLogin} />
+            <input type="submit" value="Demo login" onClick={this.handleDemoLogin} />
           </div>
         </form>
       </div>
@@ -79,10 +73,4 @@ class Login extends React.Component {
 }
 
 export default withRouter(Login);
-
-// <div className="login-form-text">
-//   Don't have an account?
-//   <a href="#" onClick={this.switchForm}> Sign up</a>
-// </div>
-
 // <input type="submit" value="Guest login" onClick={this.handleGuestLogin} />

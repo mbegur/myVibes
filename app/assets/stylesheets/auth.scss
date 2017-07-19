@@ -1,0 +1,54 @@
+.if-user-logged-in {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.if-user-logged-out {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.header {
+  color: white;
+  margin-left: 1%;
+}
+body, html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+    /* The image used */
+    background-image: url("splash_image_green.gif");
+
+    /* Set a specific height */
+    height: 400px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.auth-buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+
+.auth-buts {
+  height: 30px;
+  padding: 0 15px;
+  background-color : transparent;
+  -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+    border-radius: 5px;
+  color: white;
+  border-color: white;
+
+}

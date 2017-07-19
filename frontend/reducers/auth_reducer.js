@@ -11,7 +11,7 @@ const AuthReducer = (state = nullUser, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
-      return merge({}, state, { currentUser });
+      return merge({}, nullUser, { currentUser });
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, nullUser, { errors });
