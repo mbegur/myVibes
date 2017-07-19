@@ -8,14 +8,15 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 const App = () => (
   <div>
     <h1>myVibes</h1>
     <NavBarContainer />
     <Switch>
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>
 
   </div>
