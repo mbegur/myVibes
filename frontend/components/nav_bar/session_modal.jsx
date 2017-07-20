@@ -8,12 +8,16 @@ import SignupFormContainer from '../session/sign_up_container';
 
 const customStyles = {
   content : {
+    borderRadius          : '4px',
+    height                : "300px",
+    width                 : "300px",
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    border                : '2px solid #ccc'
   }
 };
 
@@ -48,7 +52,7 @@ class SessionModal extends React.Component {
     return (
       <div>
         {this.props.formType === "signup" ? <div>
-          <button onClick={this.openModal}>Sign Up</button>
+          <button className="auth-buts" onClick={this.openModal}>Create Account</button>
           <Modal
           isOpen={this.state.modalIsOpen}
 
@@ -59,7 +63,7 @@ class SessionModal extends React.Component {
           <SignupFormContainer formType={"signup"} />
 
         </Modal></div> : <div>
-        <button onClick={this.openModal}>Log In</button>
+        <button className="auth-buts" onClick={this.openModal}>Log In</button>
           <Modal
           isOpen={this.state.modalIsOpen}
 

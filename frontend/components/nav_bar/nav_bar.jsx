@@ -31,21 +31,41 @@ class NavBar extends React.Component {
             <div className="auth-buttons">
               <button className="auth-buts" onClick={this.logOutUser}>Log Out</button>
             </div>
-          </div> : <div className="if-user-logged-out">
+
+          </div>
+          : <div className="if-user-logged-out">
           <div className="header">
             <h1>myVibes</h1>
           </div>
           <div className="auth-buttons">
-            <button className="auth-buts" onClick={this.handleDemoLogin}>Demo Log In</button>
+            
+              <button className="auth-buts" onClick={this.handleDemoLogin}>Demo Log In</button>
+            
             &nbsp;
-            <button className="auth-buts"><SessionModal className="auth-buts" formType={"signup"}/></button>
+            
+              <SessionModal formType={"login"}/>
+            
             &nbsp;
-            <button className="auth-buts"><SessionModal className="auth-buts" formType={"login"}/></button>
+
+              <SessionModal className="auth-buts" formType={"signup"}/>
+
+
           </div>
 
           </div>
         }
+
+        <div className="welcome-text">
+          <h3>Connect on myVibes</h3>
+          <p>Explore, stream, and enjoy your favorite music from emerging and major artists</p>
+          <SessionModal formType={"signup"}/>
+        </div>
+
+
       </div>
+
+
+
     );
   }
 

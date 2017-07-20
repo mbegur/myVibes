@@ -12,6 +12,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 const App = () => (
   <div className='app'>
+
     <NavBarContainer />
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />

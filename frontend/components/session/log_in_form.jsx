@@ -20,7 +20,6 @@ class Login extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      // .then(() => this.props.closeLoginModal())
       .then(() => this.props.history.push("/"));
   }
 
@@ -47,24 +46,27 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="overall-form">
+        <form className="form-box" onSubmit={this.handleSubmit}>
 
           <h1>Log In</h1>
           {this.renderErrors()}
-          <div className="login-form">
-            <label>Username</label>
+          <div className="form">
+
             <input type="text"
+              className="auth-input"
               onChange={this.update('username')}
               value={this.state.username}
+              placeholder="username"
             />
-            <label>Password</label>
             <input type="password"
+              className="auth-input"
               onChange={this.update('password')}
               value={this.state.password}
+              placeholder="password"
             />
-            <input type="submit" value="Log in" />
-            <input type="submit" value="Demo login" onClick={this.handleDemoLogin} />
+          <input className="form-but" type="submit" value="Log in" />
+            <input className="form-but" type="submit" value="Demo login" onClick={this.handleDemoLogin} />
           </div>
         </form>
       </div>
@@ -74,3 +76,5 @@ class Login extends React.Component {
 
 export default withRouter(Login);
 // <input type="submit" value="Guest login" onClick={this.handleGuestLogin} />
+  // <label>Username</label>
+  // <label>Password</label>
