@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/auth_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/auth_actions';
 
 const nullUser = Object.freeze({
   currentUser: null,
@@ -15,6 +15,9 @@ const AuthReducer = (state = nullUser, action) => {
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, nullUser, { errors });
+    case CLEAR_ERRORS:
+      const newErrors = [];
+      return merge({}, nullUser, { newErrors });
     default:
       return state;
   }
