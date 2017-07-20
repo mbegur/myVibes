@@ -30,6 +30,7 @@
     }
   ],
   audio: {
+
     currentState {
       paused: boolean,
       volume: integer
