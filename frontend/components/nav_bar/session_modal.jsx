@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import SessionFormContainer from '../session/session_form_container';
+// import SessionFormContainer from '../session/session_form_container';
 import LoginFormContainer from '../session/log_in_container';
 import SignupFormContainer from '../session/sign_up_container';
 

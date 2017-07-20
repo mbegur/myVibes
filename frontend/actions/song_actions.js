@@ -16,9 +16,9 @@ export const receiveSingleSong = (song) => ({
   song
 });
 
-export const removeSong = (song) => ({
+export const removeSong = (id) => ({
   type: REMOVE_SONG,
-  song
+  id
 });
 
 export const receiveErrors = (errors) => ({

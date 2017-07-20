@@ -30,7 +30,7 @@ class Api::SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
-    render "api/songs"
+    render "api/songs/show"
   end
 
 
