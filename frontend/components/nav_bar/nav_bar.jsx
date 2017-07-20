@@ -38,13 +38,13 @@ class NavBar extends React.Component {
             <h1>myVibes</h1>
           </div>
           <div className="auth-buttons">
-            
+
               <button className="auth-buts" onClick={this.handleDemoLogin}>Demo Log In</button>
-            
+
             &nbsp;
-            
+
               <SessionModal formType={"login"}/>
-            
+
             &nbsp;
 
               <SessionModal className="auth-buts" formType={"signup"}/>
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
 
         <div className="welcome-text">
           <h3>Connect on myVibes</h3>
-          <p>Explore, stream, and enjoy your favorite music from emerging and major artists</p>
+          <p>Explore, stream, and enjoy your favorite music <br/>from emerging and major artists</p>
           <SessionModal formType={"signup"}/>
         </div>
 
