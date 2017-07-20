@@ -59,18 +59,6 @@ body, div, nav, h2, h1, h3, button, html, p {
 
 
 
-.auth-buts {
-  height: 30px;
-  padding: 0 15px;
-  background-color : transparent;
-  // -moz-border-radius: 5px;
-  //   -webkit-border-radius:5px;
-  //   border-radius: 5px;
-  border: 2px solid white;
-  border-radius: 5px;
-  color: white;
-
-}
 
 .welcome-text {
   display: flex;
@@ -97,5 +85,5 @@ body, div, nav, h2, h1, h3, button, html, p {
 
 .welcome-text button {
   margin-top: 25px;
-  background-color: green;
+  background-color: #228B22;
 }
