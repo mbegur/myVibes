@@ -7,9 +7,9 @@ import SignupFormContainer from '../session/sign_up_container';
 
 
 const customStyles = {
-  overlay : {
-    background-color : rgba(0,0,0,0.8)
-  },
+  // overlay : {
+  //   background-color : rgba(0, 0 ,0 , 0.8)
+  // },
   content : {
     borderRadius          : '4px',
     height                : "300px",
