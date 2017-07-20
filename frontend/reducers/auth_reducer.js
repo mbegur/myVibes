@@ -17,7 +17,7 @@ const AuthReducer = (state = nullUser, action) => {
       return merge({}, nullUser, { errors });
     case CLEAR_ERRORS:
       const newErrors = [];
-      return merge({}, nullUser, { newErrors });
+      return merge({}, { currentUser: state.currentUser }, { newErrors });
     default:
       return state;
   }
