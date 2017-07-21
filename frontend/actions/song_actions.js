@@ -3,7 +3,7 @@ import * as APIUtil from '../util/song_api_util';
 export const RECEIVE_ALL_SONGS = "RECEIVE_ALL_SONGS";
 export const RECEIVE_SINGLE_SONG = "RECEIVE_SINGLE_SONG";
 export const REMOVE_SONG = "REMOVE_SONG";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_SONG_ERRORS = "RECEIVE_SONG_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const receiveAllSongs = (songs) => ({
@@ -21,8 +21,8 @@ export const removeSong = (id) => ({
   id
 });
 
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+export const receiveSongErrors = (errors) => ({
+  type: RECEIVE_SONG_ERRORS,
   errors
 });
 
@@ -46,7 +46,7 @@ export const createSong = (song) => dispatch => (
   APIUtil.createSong(song).then(song => (
     dispatch(receiveSingleSong(song))
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON))
+    dispatch(receiveSongErrors(errors.responseJSON))
   ))
 );
 
@@ -55,3 +55,10 @@ export const deleteSong = (id) => dispatch => (
     dispatch(removeSong(song))
   ))
 );
+
+export const updateSong = (id, song) => dispatch => {
+  return APIUtil.updateSong(id, song).then(song =>
+    dispatch(receiveSingleSong(song)),
+    error => dispatch(receiveSongErrors(error.responseJSON))
+  );
+};

@@ -1,7 +1,7 @@
 import { merge } from 'lodash';
 import {
   RECEIVE_ALL_SONGS,
-  RECEIVE_ERRORS,
+  RECEIVE_SONG_ERRORS,
   CLEAR_ERRORS,
   RECEIVE_SINGLE_SONG,
   REMOVE_SONG
@@ -24,7 +24,7 @@ const SongReducer = (state = defaultState, action) => {
       newState = merge({}, state);
       newState.songs[newSong.id] = newSong;
       return newState;
-    case RECEIVE_ERRORS:
+    case RECEIVE_SONG_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });
     case REMOVE_SONG:

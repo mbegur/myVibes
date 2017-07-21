@@ -35,7 +35,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 song_id     | integer   | not null, foreign key (references songs), indexed
-user_id    | integer   | not null, foreign key (references user), indexed
+user_id     | integer   | not null, foreign key (references user), indexed
 
 ## playlists
 column name | data type | details
