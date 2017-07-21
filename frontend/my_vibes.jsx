@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.dispatch = store.dispatch;
   window.deleteSong = deleteSong;
   window.createSong = createSong;
-  let store2;
+  let store;
   window.signup = signup;
   window.login = login;
   window.logout = logout;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
-    store2 = configureStore(preloadedState);
+    store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
-    store2 = configureStore();
+    store = configureStore();
   }
-  window.getState = store2.getState;
+  window.getState = store.getState;
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={ store2 }/>, root);
+  ReactDOM.render(<Root store={ store }/>, root);
 });

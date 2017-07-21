@@ -65,17 +65,19 @@ class SongForm extends React.Component {
     formData.append("song[description]", this.state.description);
     formData.append("song[user_id]", this.state.user_id);
     formData.append("song[image]", this.state.image || this.state.image_url);
-    if (this.state.track_url) {
-      formData.append("song[track]", this.state.track_url);
-    } else{
-      formData.append("song[track]", this.state.track);
-    }
+    formData.append("song[track]", this.state.track);
+    // if (this.state.track_url) {
+    //   formData.append("song[track]", this.state.track_url);
+    // } else{
+    //   formData.append("song[track]", this.state.track);
+    // }
 
       this.props.createSong(formData).then(data => {
         this.props.history.push(`/song/${data.song.id}`);
-      }).then(() => {
-        this.props.closeModal();
       });
+      // .then(() => {
+      //   this.props.closeModal();
+      // });
 
   }
 
@@ -84,13 +86,13 @@ class SongForm extends React.Component {
     return(
       <section>
         {this.renderErrors()}
-        <form className="overall-form">
+        <form className="overall">
           <div >
             <img src={this.state.image_url}
                alt="album-art" />
             <br />
             <p>Choose Cover Photo</p>
-            <input type="file" onChange={this.updateImage}/>
+            <input type="file" onChange={this.setImage}/>
           </div>
           <div className='song-form-right'>
             <input
@@ -107,7 +109,7 @@ class SongForm extends React.Component {
               cols="40" rows="5"></textarea>
               <hr />
             <p>Choose Song</p>
-              <input type="file" onChange={this.updateTrack}/>
+              <input type="file" onChange={this.setTrack}/>
             <hr />
             <button onClick={this.handleSubmit}>Upload</button>
           </div>

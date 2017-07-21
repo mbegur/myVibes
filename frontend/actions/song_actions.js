@@ -43,9 +43,11 @@ export const requestSingleSong = (id) => dispatch =>(
 );
 
 export const createSong = (song) => dispatch => (
-  APIUtil.createSong(song).then(song => (
-    dispatch(receiveSingleSong(song))
-  ), errors => (
+  APIUtil.createSong(song).then(song => {
+    return (
+      dispatch(receiveSingleSong(song))
+    );
+  }, errors => (
     dispatch(receiveSongErrors(errors.responseJSON))
   ))
 );
