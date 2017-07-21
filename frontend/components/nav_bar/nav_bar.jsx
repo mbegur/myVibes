@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SessionModal from './session_modal';
+import SongUploadModal from '../songs/song_upload_modal';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -28,7 +29,11 @@ class NavBar extends React.Component {
             <div className="header">
               <h1>myVibes</h1>
             </div>
+
             <div className="auth-buttons">
+              <SongUploadModal clearSongErrors={this.props.clearSongErrors}
+            user={this.props.currentUser.id}
+            type="upload"/>
               <button className="auth-buts" onClick={this.logOutUser}>Log Out</button>
             </div>
 

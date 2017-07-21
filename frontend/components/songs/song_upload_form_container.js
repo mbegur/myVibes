@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SongUploadForm from './song_upload_form';
 
-import { createSong }
+import { createSong, updateSong }
   from '../../actions/song_actions';
 
 
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  createSong: song => dispatch(createSong(song))
+  createSong: song => dispatch(createSong(song)),
+  updateSong: (id, song) => dispatch(updateSong(id, song))
 });
 
 export default connect(

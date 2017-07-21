@@ -6,14 +6,14 @@ class SongForm extends React.Component {
     super(props);
 
     this.state = {title: '', description: '', image: '',
-      image_url: 'http://res.cloudinary.com/mbegur/image/upload/v1500615071/music_symbol_kzhjy7.jpg',
+      image_url: 'http://images.clipartpanda.com/musical-notes-symbols-tattoos-2597.jpg',
       track: '', user_id: this.props.id};
     if (this.props.song) {
       this.state = this.props.song;
     }
     this.update = this.update.bind(this);
-    this.updateImage = this.updateImage.bind(this);
-    this.updateTrack = this.updateTrack.bind(this);
+    this.setImage = this.setImage.bind(this);
+    this.setTrack = this.setTrack.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -31,7 +31,7 @@ class SongForm extends React.Component {
     }
   }
 
-  updateImage(e) {
+  setImage(e) {
     const file = e.currentTarget.files[0];
     var fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -42,7 +42,7 @@ class SongForm extends React.Component {
     }
   }
 
-  updateTrack(e) {
+  setTrack(e) {
     const file = e.currentTarget.files[0];
     var fileReader = new FileReader();
     fileReader.onloadend = () => {
