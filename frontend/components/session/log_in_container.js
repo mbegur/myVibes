@@ -9,7 +9,7 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login({ user })),
   clearErrors: () => dispatch(clearErrors())
-  // receiveClearErrors: () => dispatch(receiveClearErrors())
+  // receiveClearErrors: () => dispatch(receiveClearErrors()
 });
 
 export default connect(

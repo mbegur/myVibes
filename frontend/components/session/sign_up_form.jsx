@@ -26,13 +26,13 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user).then(() => this.props.history.push("/"));
+    this.props.signup(user).then(() => this.props.history.push("/songs"));
   }
 
   handleDemoLogin(e) {
     e.preventDefault();
     this.props.login({user: {username: "guestuser", password: "123456"}})
-    .then(() => this.props.history.push("/"));
+    .then(() => this.props.history.push("/songs"));
   }
 
 

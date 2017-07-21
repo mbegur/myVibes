@@ -1,4 +1,6 @@
-
+body.homepage #page-header-wrapper {
+  display: none !important;
+}
 
 .if-user-logged-in {
   display: flex;
@@ -44,6 +46,19 @@ body, div, nav, h2, h1, h3, button, html, p {
     background-size: cover;
     position: relative;
 
+}
+
+.overall-nav-bar {
+  background-color: black;
+
+  /* Set a specific height */
+  height: 0%;
+
+  /* Position and center the image to scale nicely on all screens */
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
 }
 
 .auth-buttons {

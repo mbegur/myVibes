@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
-import { requestAllSongs, requestSingleSong, clearErrors } from '../../actions/auth_actions';
+import { requestAllSongs, requestSingleSong, clearErrors } from '../../actions/song_actions';
 import SongIndex from './song_index';
+import { selectAllSongs } from '../../reducers/selectors';
 
-const mapStateToProps = ({ session }) => ({
-  errors: session.errors
+const mapStateToProps = state => ({
+  songs: selectAllSongs(state),
+  errors: state.songs.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({

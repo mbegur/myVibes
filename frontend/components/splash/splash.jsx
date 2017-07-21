@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import SessionModal from './session_modal';
+import SessionModal from '../nav_bar/session_modal';
 
-class NavBar extends React.Component {
+class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 
   render() {
     return(
-      <div className="overall-nav-bar">
+      <div className="hero-image">
         {this.props.currentUser ?
           <div className="if-user-logged-in">
 
@@ -55,7 +55,11 @@ class NavBar extends React.Component {
           </div>
         }
 
-
+        <div className="welcome-text">
+          <h3>Connect on myVibes</h3>
+          <p>Explore, stream, and enjoy your favorite music <br/>from emerging and major artists</p>
+          <SessionModal formType={"signup"}/>
+        </div>
 
 
       </div>
@@ -67,10 +71,4 @@ class NavBar extends React.Component {
 
 }
 
-export default NavBar;
-
-// <div className="welcome-text">
-//   <h3>Connect on myVibes</h3>
-//   <p>Explore, stream, and enjoy your favorite music <br/>from emerging and major artists</p>
-//   <SessionModal formType={"signup"}/>
-// </div>
+export default Splash;

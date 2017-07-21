@@ -25,13 +25,13 @@ class Login extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      .then(() => this.props.history.push("/"));
+      .then(() => this.props.history.push("/songs"));
   }
 
   handleDemoLogin(e) {
     e.preventDefault();
     this.props.login({user: {username: "guestuser", password: "123456"}})
-    .then(() => this.props.history.push("/"));
+    .then(() => this.props.history.push("/songs"));
   }
 
 
