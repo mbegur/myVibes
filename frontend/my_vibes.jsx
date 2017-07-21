@@ -7,9 +7,9 @@ import { createSong, deleteSong } from './actions/song_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // const store = configureStore();
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   window.deleteSong = deleteSong;
   window.createSong = createSong;
   let store2;
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store2 = configureStore();
   }
+  window.getState = store2.getState;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store2 }/>, root);
 });

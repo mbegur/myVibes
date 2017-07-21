@@ -16,7 +16,7 @@ class NavBar extends React.Component {
   }
 
   logOutUser(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.props.logout(); //.then(() => this.props.history.push("/"));
   }
 
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
               <SongUploadModal clearSongErrors={this.props.clearSongErrors}
             user={this.props.currentUser.id}
             type="upload"/>
-              <button className="auth-buts" onClick={this.logOutUser}>Log Out</button>
+              <Link to='/'><button className="auth-buts" onClick={this.logOutUser}>Log Out</button></Link>
             </div>
 
           </div>

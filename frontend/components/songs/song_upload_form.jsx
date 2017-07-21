@@ -84,7 +84,7 @@ class SongForm extends React.Component {
     return(
       <section>
         {this.renderErrors()}
-        <form >
+        <form className="overall-form">
           <div >
             <img src={this.state.image_url}
                alt="album-art" />
