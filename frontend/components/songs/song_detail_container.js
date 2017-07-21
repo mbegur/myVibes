@@ -9,5 +9,16 @@ import {
 
 
 const mapStateToProps = state => ({
-      song: state.songs.songs
+  songs: state.songs.songs,
+  currentUser: state.session.currentUser
 });
+
+const mapDispatchToProps = dispatch => ({
+  requestSingleSong: id => dispatch(requestSingleSong(id)),
+  deleteSong: id => dispatch(deleteSong(id)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SongDetail);

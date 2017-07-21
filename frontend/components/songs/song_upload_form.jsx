@@ -82,7 +82,7 @@ class SongForm extends React.Component {
   }
 
   render(){
-
+    console.log(this.state);
     return(
       <section>
         {this.renderErrors()}
