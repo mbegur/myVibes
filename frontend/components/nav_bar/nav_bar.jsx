@@ -27,7 +27,9 @@ class NavBar extends React.Component {
           <div className="if-user-logged-in">
 
             <div className="header">
-              <h1>myVibes</h1>
+              <Link to='/'>
+                <button className='logo-buts'><h1>myVibes</h1></button>
+              </Link>
             </div>
 
             <div className="auth-buttons">

@@ -5,9 +5,28 @@
   align-content: center;
 }
 
+.overall-upload-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form{
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+}
+
+.ReactModal__Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-form-box {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-content: center;
 }
@@ -41,7 +60,26 @@
   -webkit-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
 -moz-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
 box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+color: #3CB371;
 }
+
+.logo-buts:hover {
+//   -webkit-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+// -moz-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+// box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+color: #3CB371;
+}
+
+.logo-buts {
+  height: 30px;
+  padding: 0 15px;
+  background-color : transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+
+}
+
 
 .form-but {
   margin-top: 10px;

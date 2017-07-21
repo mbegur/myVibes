@@ -13,7 +13,7 @@ const customStyles = {
   // },
   content : {
     borderRadius          : '4px',
-    height                : "500px",
+    height                : "70%",
     width                 : "500px",
     top                   : '50%',
     left                  : '50%',

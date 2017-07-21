@@ -18,7 +18,7 @@ class SongIndex extends React.Component {
         <header>
           <NavBarContainer />
         </header>
-        <ul>
+        <ul className="song-index-list">
           { allSongs }
         </ul>
       </div>

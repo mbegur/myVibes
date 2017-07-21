@@ -9,7 +9,7 @@ class SongForm extends React.Component {
       title: '',
       description: '',
       image: '',
-      image_url: 'http://images.clipartpanda.com/musical-notes-symbols-tattoos-2597.jpg',
+      image_url: '',
       track: '',
       user_id: this.props.id};
     if (this.props.song) {
@@ -84,15 +84,15 @@ class SongForm extends React.Component {
   render(){
     console.log(this.state);
     return(
-      <section>
+      <div className="overall-upload-form">
         {this.renderErrors()}
-        <form className="overall">
-          <div >
-            <img src={this.state.image_url}
-               alt="album-art" />
+        <form className="upload-form-box">
+          <div className="form">
+            {this.state.image_url.length > 0 ? <img height="150" width="150" src={this.state.image_url}
+               alt="album-art" /> : <div></div>}
             <br />
             <p>Choose Cover Photo</p>
-            <input type="file" onChange={this.setImage}/>
+            <input className="auth-input" type="file" onChange={this.setImage}/>
           </div>
           <div className='song-form-right'>
             <input
@@ -100,21 +100,21 @@ class SongForm extends React.Component {
                   value={this.state.title}
                   placeholder="Title"
                   onChange={this.update('title')}
-                  className="song-input"
+                  className="auth-input"
                 />
-              <hr />
             <textarea placeholder="Description"
               value={this.state.description}
               onChange={this.update('description')}
-              cols="40" rows="5"></textarea>
-              <hr />
+              cols="60" rows="3"
+              className="auth-input"></textarea>
+
             <p>Choose Song</p>
-              <input type="file" onChange={this.setTrack}/>
-            <hr />
-            <button onClick={this.handleSubmit}>Upload</button>
+              <input className="auth-input" type="file" onChange={this.setTrack}/>
+
+            <button className="form-buts" onClick={this.handleSubmit}>Upload</button>
           </div>
         </form>
-      </section>
+      </div>
     );
   }
 }
