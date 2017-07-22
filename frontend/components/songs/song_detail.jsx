@@ -28,7 +28,7 @@ class SongDetail extends React.Component {
     return (
       <div>
         <header>
-          {NavBarContainer}
+          <NavBarContainer />
         </header>
         <div className="song_detail">
           <h1>{this.state.title}</h1>
