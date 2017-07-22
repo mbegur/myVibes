@@ -25,7 +25,7 @@ class SongDetail extends React.Component {
     e.preventDefault();
     var result = confirm("Are you sure you want to delete this song?");
     if (result) {
-      this.props.deleteSong(this.props.song.id)
+      this.props.deleteSong(this.props.songs[this.props.match.params.songId].id)
         .then(data => this.props.history.push(`/songs`));
     }
   }
