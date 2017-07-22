@@ -9,7 +9,7 @@ import SongUploadFormContainer from './song_upload_form_container';
 
 const customStyles = {
   // overlay : {
-  //   background-color : rgba(0, 0 ,0 , 0.8)
+  //   backgroundColor : rgba(0, 0 ,0 , 0.8)
   // },
   content : {
     borderRadius          : '4px',
