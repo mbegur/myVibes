@@ -17,12 +17,12 @@ module SoundCloudClone
       :storage => :s3,
       :s3_region => 'us-west-1',
       :s3_credentials => {
-        :bucket => ENV["s3_bucket"],
-        :access_key_id => ENV["s3_access_key_id"],
-        :secret_access_key => ENV["s3_secret_access_key"]
+        :bucket => ENV["S3_BUCKET_NAME"],
+        :access_key_id => ENV["AWS_SECRET_ACCESS_KEY"],
+        :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]
 
       }
-      
+
     }
   end
 end
