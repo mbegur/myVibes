@@ -13,6 +13,7 @@ module SoundCloudClone
     # -- all .rb files in that directory are automatically loaded.
 
     config.paperclip_defaults = {
+      :s3_host_name => "s3-#{ENV["s3-region"]}.amazonaws.com",
       :storage => :s3,
       :s3_credentials => {
         :bucket => ENV["s3_bucket"],
