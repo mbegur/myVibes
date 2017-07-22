@@ -8,23 +8,10 @@ class PostEdit extends React.Component {
     console.log(this.props);
     this.state = this.props.songs[this.props.match.params.songId];
     console.log(this.state);
-    this.setTitle = this.setTitle.bind(this);
-    this.setBody = this.setBody.bind(this);
-    // this.setDefaultValues = this.setDefaultValues.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  setTitle(e) {
-    e.preventDefault();
-    let newTitle = e.target.value;
-    this.setState({ title: newTitle });
-  }
-
-  setBody(e) {
-    e.preventDefault();
-    let newBody = e.target.value;
-    this.setState({ body: newBody });
-  }
+  
 
   // setDefaultValues() {
   //   this.setState({ title: this.props.post.title});
