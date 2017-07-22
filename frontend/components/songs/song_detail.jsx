@@ -8,7 +8,7 @@ class SongDetail extends React.Component {
     super(props);
     console.log(this.props);
     this.state = this.props.songs[this.props.match.params.songId];
-    console.log(this.state);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +21,25 @@ class SongDetail extends React.Component {
     }
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    var result = confirm("Are you sure you want to delete this song?");
+    if (result) {
+      this.props.deleteSong(this.props.song.id)
+        .then(data => this.props.history.push(`/songs`));
+    }
+  }
 
 
   render() {
+    const { songs, currentUser } = this.props;
+    const song = songs[this.props.match.params.songId];
+    let deleteButton;
+    if (currentUser && currentUser.id === song.user_id) {
+      deleteButton = <button
+        className='delete-button'
+        onClick={this.handleDelete}>Delete Song</button>;
+    }
 
     return (
       <div>
@@ -32,6 +48,7 @@ class SongDetail extends React.Component {
         </header>
         <div className="song_detail">
           <h1>{this.state.title}</h1>
+          { deleteButton }
         </div>
       </div>
     );
