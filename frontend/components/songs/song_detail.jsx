@@ -1,56 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
-class PostEdit extends React.Component {
+class SongDetail extends React.Component {
 
   constructor(props) {
     super(props);
     console.log(this.props);
     this.state = this.props.songs[this.props.match.params.songId];
     console.log(this.state);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  
-
-  // setDefaultValues() {
-  //   this.setState({ title: this.props.post.title});
-  //   this.setState({ body: this.props.post.body});
-  // }
 
   componentDidMount() {
-    this.props.requestSinglePost(this.props.match.params.postId);
+    this.props.requestSingleSong(this.props.match.params.songId);
   }
 
-  handleSubmit(e) {
-    this.props.editPost({
-      id: this.props.match.params.postId,
-      title: this.state.title,
-      body: this.state.body
-    });
-
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.postId !== nextProps.match.params.postId) {
+      this.props.requestSingleSong(nextProps.match.params.postId);
+    }
   }
+
+
 
   render() {
+
     return (
-
-      this.state.title ? <div className="overall-form">
-        <h1>Edit This Post!</h1>
-        <form className="under-form">
-          <label>Title
-            <input onChange={this.setTitle} value={this.state.title}></input>
-          </label>
-
-          <label>Body
-            <input onChange={this.setBody} value={this.state.body}></input>
-          </label>
-
-
-          <Link onClick={this.handleSubmit} to="/"><button>Submit</button></Link>
-        </form>
-      </div> : "loading"
+      <div>
+        <header>
+          {NavBarContainer}
+        </header>
+        <div className="song_detail">
+          <h1>{this.state.title}</h1>
+        </div>
+      </div>
     );
   }
 }
 
-export default PostEdit;
+export default SongDetail;

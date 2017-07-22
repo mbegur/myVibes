@@ -17,7 +17,7 @@ const App = () => (
     <div>
       <Route exact path="/" component={ SplashContainer }  />
       <Route exact path="/songs" component={ SongIndexContainer }  />
-      <Route exact path="/song/:songId" component={ SongDetailContainer }  />
+      <Route exact path="/songs/:songId" component={ SongDetailContainer }  />
     </div>
     <footer>
 
