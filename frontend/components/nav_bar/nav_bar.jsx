@@ -27,12 +27,16 @@ class NavBar extends React.Component {
           <div className="if-user-logged-in">
 
             <div className="header">
-              <Link to='/'>
+              <Link to='/songs'>
                 <button className='logo-buts'><h1>myVibes</h1></button>
               </Link>
             </div>
 
             <div className="auth-buttons">
+              <Link to={`/users/${this.props.currentUser.id}`}>
+              <button className="auth-buts">
+                {this.props.currentUser.username}
+              </button></Link>
               <SongUploadModal clearSongErrors={this.props.clearSongErrors}
             user={this.props.currentUser.id}
             type="upload"/>

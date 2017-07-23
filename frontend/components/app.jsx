@@ -3,6 +3,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import SongIndexContainer from './songs/song_index_container';
 import SplashContainer from './splash/splash_container';
 import SongDetailContainer from './songs/song_detail_container';
+import UserContainer from './users/user_container';
 import {
   Route,
   Redirect,
@@ -18,6 +19,7 @@ const App = () => (
       <Route exact path="/" component={ SplashContainer }  />
       <Route exact path="/songs" component={ SongIndexContainer }  />
       <Route exact path="/songs/:songId" component={ SongDetailContainer }  />
+      <Route exact path="/user/:userId" component={ UserContainer }  />
     </div>
     <footer>
 

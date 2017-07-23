@@ -1,0 +1,25 @@
+import { RECEIVE_SINGLE_USER,
+  RECEIVE_USER_ERRORS,
+  RECEIVE_USER_SONGS, } from '../actions/user_actions';
+
+const defaultState = {
+  user: null,
+  songs: null,
+  errors: []
+};
+
+const UserReducer = (state = defaultState, action) => {
+  Object.freeze(state);
+
+  switch (action.type) {
+    case RECEIVE_SINGLE_USER:
+      const newState = Object.assign({}, state);
+      return Object.assign(newState,{ user: action.user });
+    case RECEIVE_USER_ERRORS:
+      const errors = action.errors;
+      const newState2 = Object.assign({}, state);
+      return Object.assign(newState2, { errors });
+    default:
+      return state;
+  }
+};

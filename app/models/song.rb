@@ -1,3 +1,5 @@
+require_relative 'cred.rb'
+
 class Song < ApplicationRecord
   validates :title, :user, presence: true
 
