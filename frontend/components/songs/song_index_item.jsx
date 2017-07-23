@@ -8,7 +8,7 @@ class SongIndexItem extends React.Component {
 
     return (
       <div className='overall-song-index-item'>
-        <Link to={`/songs/${song.id}`}><li className="song-index-item">
+        <Link className="link-to_song" to={`/songs/${song.id}`}><li className="song-index-item">
           <Link to={`/songs/${song.id}`}>
             <img className="song-index-image" height="180" width="180" src={song.image_file_name} alt="cover-photo" />
           </Link>
