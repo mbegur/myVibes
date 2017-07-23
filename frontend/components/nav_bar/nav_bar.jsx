@@ -34,7 +34,7 @@ class NavBar extends React.Component {
 
             <div className="auth-buttons">
               <Link to={`/users/${this.props.currentUser.id}`}>
-              <button className="auth-buts">
+              <button className="username-nav">
                 {this.props.currentUser.username}
               </button></Link>
               <SongUploadModal clearSongErrors={this.props.clearSongErrors}

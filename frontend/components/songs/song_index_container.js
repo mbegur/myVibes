@@ -5,7 +5,8 @@ import { selectAllSongs } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   songs: selectAllSongs(state),
-  errors: state.songs.errors
+  errors: state.songs.errors,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

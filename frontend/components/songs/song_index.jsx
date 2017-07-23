@@ -11,16 +11,20 @@ class SongIndex extends React.Component {
 
   render() {
     const { songs } = this.props;
+    console.log(this.props);
     const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} />));
     //
     return (
-      <div>
+      <div className="overall-index-page">
         <header>
           <NavBarContainer />
         </header>
-        <ul className="song-index-list">
-          { allSongs }
-        </ul>
+        <div className="song-index-page">
+          <h1>Stream</h1>
+          <ul className="song-index-list">
+            { allSongs }
+          </ul>
+        </div>
       </div>
 
 

@@ -6,17 +6,67 @@
 
 .song-index-item {
   display: flex;
-  // justify-content: space-between;
+  // justify-content:;
   flex-direction: row;
   height: 10%;
-  width: 50%;
-  border-bottom: 1px solid gray;
+  width: 30em;
+  border-bottom: 1px solid #BAF9DF;
   margin-bottom: 20px;
+}
+
+.link-to_song:link {
+  text-decoration: none;
+}
+.overall-song-index-item {
+  li {
+    list-style: none;
+  }
+}
+.song-title:link {
+  color: #fb3f00;
+   text-decoration: none;
+}
+.song-username {
+  font-size: 15px;
 }
 
 .song-index-list {
   display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  margin-right: 20%;
+
+}
+
+.overall-index-page {
+  display: flex;
   justify-content: center;
   flex-direction: column;
+  align-content: center;
+  // align-items: center;
+  justify-content: center;
+  background-color: #BAF9DF;
+}
+
+.song-index-page {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  // border: solid 2px black;
+  align-self: center;
+  background-color: white;
   align-items: center;
+
+  h1 {
+    // margin-left: 10%;
+    border-bottom: 2px solid #BAF9DF;
+    width: 70%;
+  }
+
+  div {
+    align-items: center;
+    font-size: 20px;
+    margin-left: 15%;
+  }
 }

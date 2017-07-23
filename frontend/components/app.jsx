@@ -19,10 +19,9 @@ const App = () => (
       <Route exact path="/" component={ SplashContainer }  />
       <Route exact path="/songs" component={ SongIndexContainer }  />
       <Route exact path="/songs/:songId" component={ SongDetailContainer }  />
-      <Route exact path="/user/:userId" component={ UserContainer }  />
+      <Route exact path="/users/:userId" component={ UserContainer }  />
     </div>
     <footer>
-
     </footer>
 
   </div>

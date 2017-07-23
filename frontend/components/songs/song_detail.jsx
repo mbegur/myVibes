@@ -48,6 +48,12 @@ class SongDetail extends React.Component {
         </header>
         <div className="song_detail">
           <h1>{this.state.title}</h1>
+          {song.user.username}
+          <img className="song-index-image"
+            height="180"
+            width="180"
+            src={song.image_file_name}
+            alt="cover-photo" />
           { deleteButton }
         </div>
       </div>

@@ -17,13 +17,13 @@ export const userErrors = errors => {
     errors
   });
 };
-// 
-// export const receiveUserSongs = songs => {
-//   return ({
-//     type: RECEIVE_USER_SONGS,
-//     songs
-//   });
-// };
+//
+export const receiveUserSongs = songs => {
+  return ({
+    type: RECEIVE_USER_SONGS,
+    songs
+  });
+};
 
 export const requestSingleUser = id => dispatch => (
   APIUtil.fetchUser(id).then(user => (
@@ -32,14 +32,14 @@ export const requestSingleUser = id => dispatch => (
 );
 
 export const updateUser = (id, user) => dispatch => {
-  return APIUtil.updateUser(id, user).then(_user =>
-    dispatch(receiveSingleUser(_user)),
+  return APIUtil.updateUser(id, user).then(user =>
+    dispatch(receiveSingleUser(user)),
     errors => dispatch(userErrors(errors.responseJSON))
   );
 };
-//
-// export const fetchSongsByUser = id => dispatch => (
-//   APIUtil.fetchSongsByUser(id).then(songs => (
-//     dispatch(receiveUserSongs(songs))
-//   ))
-// );
+
+export const requestSongsByUser = id => dispatch => (
+  APIUtil.fetchSongsByUser(id).then(songs => (
+    dispatch(receiveUserSongs(songs))
+  ))
+);

@@ -54,6 +54,7 @@ body, div, nav, h2, h1, h3, button, html, p {
   /* Set a specific height */
   height: 0%;
 
+
   /* Position and center the image to scale nicely on all screens */
   // background-position: center;
   // background-repeat: no-repeat;
@@ -71,6 +72,20 @@ body, div, nav, h2, h1, h3, button, html, p {
     margin: 0 10px;
   }
 }
+
+.username-nav {
+  height: 30px;
+  padding: 0 15px;
+  background-color : transparent;
+  border: 1px solid transparent;
+  // border-radius: 5px;
+  color: white;
+}
+
+.username-nav:hover {
+  color: #3CB371;
+}
+
 
 
 
