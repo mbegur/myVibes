@@ -27,7 +27,7 @@ class SongIndexItem extends React.Component {
           </Link>
 
             <button className="play-button" onClick={this.playTheSong(song)}>
-              <img src="http://res.cloudinary.com/mbegur/image/upload/v1500875354/if_button_green_play_50029_klsfgj.png" alt="Play_Button" height="55" width="55"></img>
+              <img src="http://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
             </button>
 
 

@@ -57,16 +57,20 @@ class SongDetail extends React.Component {
         </header>
         <div className="song-detail-page">
           <div className='song-deets'>
-            <button className="play-button" onClick={this.playTheSong(song)}>
-              <img src="http://res.cloudinary.com/mbegur/image/upload/v1500875354/if_button_green_play_50029_klsfgj.png" alt="Play_Button" height="55" width="55"></img>
-            </button>
+            <div className='play-button-and-other-deets'>
+              <button className="play-button" onClick={this.playTheSong(song)}>
+                <img src="http://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
+              </button>
+              <div>
+                <div className='song-detail-title'>{song.title}</div>
+                <div className='song-detail-username'>{song.user.username}</div>
 
-            <div className='song-detail-title'>{song.title}</div>
-            <div className='song-detail-username'>{song.user.username}</div>
+                { deleteButton }
+                <div className='song-detail-description'>{song.description}</div>
+              </div>
 
+            </div>
 
-            { deleteButton }
-            <div className='song-detail-description'>{song.description}</div>
           </div>
           <img className="song-detail-image"
             height="300"

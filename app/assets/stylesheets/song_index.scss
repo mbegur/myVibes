@@ -79,7 +79,17 @@
   border: none;
   outline: none;
   background-color: transparent;
-  height: 90%
+  fill: green;
+  height: 90%;
+}
+
+.play-button:hover {
+  opacity: .5;
+  color: black;
+}
+
+img svg {
+  fill: green;
 }
 
 .song-Detail {

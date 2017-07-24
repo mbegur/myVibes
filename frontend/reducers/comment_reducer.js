@@ -10,7 +10,7 @@ const _initialState = {
   errors: []
 };
 
-const commentsReducers = (state = _initialState, action) => {
+const CommentReducers = (state = _initialState, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -32,4 +32,4 @@ const commentsReducers = (state = _initialState, action) => {
   }
 };
 
-export default commentsReducers;
+export default CommentReducers;

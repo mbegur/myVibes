@@ -2,11 +2,6 @@ import values from 'lodash/values';
 
 export const selectAllSongs = state => values(state.songs.songs);
 
-export const allCommentsBySong = (state) => {
-  const commentArray = values(state);
-  return commentArray.reverse();
-};
-
 export const selectListOfSongs = (state)=> {
   let playlist = [];
   if (state.songs.currentSong) {
@@ -23,4 +18,9 @@ export const selectListOfSongs = (state)=> {
       }
     });
   return playlist;
+};
+
+export const allCommentsBySong = (state) => {
+  const commentArray = values(state.comments.comments);
+  return commentArray.reverse();
 };
