@@ -17,10 +17,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 const App = () => (
   <div className='app'>
     <div>
-      <Route exact path="/" component={ SplashContainer }  />
-      <Route exact path="/songs" component={ SongIndexContainer }  />
-      <Route exact path="/songs/:songId" component={ SongDetailContainer }  />
-      <Route exact path="/users/:userId" component={ UserContainer }  />
+      <Switch>
+        <Route path="/songs/:songId" component={ SongDetailContainer }  />
+        <Route path="/users/:userId" component={ UserContainer }  />
+        <Route path="/songs" component={ SongIndexContainer }  />
+        <AuthRoute path="/" component={ SplashContainer }  />
+      </Switch>
     </div>
     <footer>
       <AudioPlayerContainer />

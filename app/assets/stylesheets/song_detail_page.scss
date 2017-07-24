@@ -1,0 +1,31 @@
+.overall-song-detail-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  // align-items: center;
+  justify-content: center;
+  background-color: #BAF9DF;
+}
+
+.song-detail-page {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  // border: solid 2px black;
+  align-self: center;
+  background-color: white;
+  align-items: center;
+  // h1 {
+  //   // margin-left: 10%;
+  //   border-bottom: 2px solid #BAF9DF;
+  //   width: 70%;
+  // }
+  //
+  // div {
+  //   align-items: center;
+  //   font-size: 20px;
+  //   margin-left: 15%;
+  // }
+}

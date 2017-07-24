@@ -8,14 +8,15 @@ import {
   } from '../../actions/song_actions';
 
 
-const mapStateToProps = state => ({
-  songs: state.songs.songs,
+const mapStateToProps = (state, { match }) => ({
+  song: state.songs.songs[match.params.songId],
   currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   requestSingleSong: id => dispatch(requestSingleSong(id)),
   deleteSong: id => dispatch(deleteSong(id)),
+  requestAllSongs: () => dispatch(requestAllSongs())
 });
 
 export default connect(

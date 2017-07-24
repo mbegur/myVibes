@@ -7,33 +7,33 @@ class SongDetail extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props);
-    this.state = this.props.songs[this.props.match.params.songId];
     this.handleDelete = this.handleDelete.bind(this);
   }
-
+  //
   componentDidMount() {
-    this.props.requestSingleSong(this.props.match.params.songId);
+    this.props.requestAllSongs();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.postId !== nextProps.match.params.postId) {
-      this.props.requestSingleSong(nextProps.match.params.postId);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params.postId !== nextProps.match.params.postId) {
+  //     this.props.requestSingleSong(nextProps.match.params.postId);
+  //   }
+  // }
 
   handleDelete(e) {
     e.preventDefault();
     var result = confirm("Are you sure you want to delete this song?");
     if (result) {
-      this.props.deleteSong(this.props.songs[this.props.match.params.songId].id)
+      this.props.deleteSong(this.props.song.id)
         .then(data => this.props.history.push(`/songs`));
     }
   }
 
-
   render() {
-    const { songs, currentUser } = this.props;
-    const song = songs[this.props.match.params.songId];
+    const { song, currentUser } = this.props;
+    if (!song) {
+      return null;
+    }
     let deleteButton;
     if (currentUser && currentUser.id === song.user_id) {
       deleteButton = <button
@@ -42,14 +42,14 @@ class SongDetail extends React.Component {
     }
 
     return (
-      <div>
+      <div className="overall-song-detail-page">
         <header>
           <NavBarContainer />
         </header>
-        <div className="song_detail">
-          <h1>{this.state.title}</h1>
+        <div className="song-detail-page">
+          <h1>{song.title}</h1>
           {song.user.username}
-          <img className="song-index-image"
+          <img className="song-detail-image"
             height="180"
             width="180"
             src={song.image_file_name}

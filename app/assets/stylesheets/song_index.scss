@@ -6,7 +6,7 @@
 
 .song-index-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: row;
   height: 10%;
   width: 30em;
@@ -35,7 +35,9 @@
   // justify-content: center;
   flex-direction: column;
   margin-right: 20%;
-
+  list-style: none;
+  // padding: 0;
+  //   margin: 0;
 }
 
 .overall-index-page {
@@ -70,8 +72,23 @@
   }
 }
 
+// ul {
+//   list-style: none;
+// }
 .play-button {
   border: none;
   outline: none;
   background-color: transparent;
+  height: 90%
+}
+
+.song-Detail {
+  border: none;
+  outline: none;
+  background: none;
+  color: black;
+}
+
+.song-Detail:hover {
+  color: #3CB371;
 }
