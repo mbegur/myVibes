@@ -9,6 +9,7 @@ import {
 
 const defaultState= Object.freeze({
   songs: {},
+  currentSong: null,
   errors: []
 });
 
@@ -22,6 +23,7 @@ const SongReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_SONG:
       const newSong = action.song;
       newState = merge({}, state);
+      newState.currentSong = newSong.id;
       newState.songs[newSong.id] = newSong;
       return newState;
     case RECEIVE_SONG_ERRORS:

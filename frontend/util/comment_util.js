@@ -1,5 +1,5 @@
 
-export const fetchComment = comment => (
+export const createComment = comment => (
   $.ajax({
     method: 'GET',
     url: `/api/comments`,
@@ -10,6 +10,13 @@ export const fetchComment = comment => (
 export const deleteComment = id => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/comments`
+    url: `/api/comments/${id}`
+  })
+);
+
+export const fetchCommentsBySong = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/song/${id}/comments`
   })
 );

@@ -2,8 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SongIndexItem extends React.Component {
+  playSong(song) {
+    return e => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.receiveSingleSong(song);
+    };
+  }
+
   render() {
-    const { song } = this.props;
+    const { song, receiveSingleSong } = this.props;
     console.log(song.user);
 
     return (
@@ -16,6 +24,7 @@ class SongIndexItem extends React.Component {
             <li className="song-title">{ song.title }</li>
             <li className="song-username">{ song.user.username }</li>
           </ul>
+          <button onClick={this.playSong(song)}>play</button>
         </li></Link>
       </div>
 

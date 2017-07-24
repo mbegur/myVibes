@@ -4,6 +4,7 @@ import SongIndexContainer from './songs/song_index_container';
 import SplashContainer from './splash/splash_container';
 import SongDetailContainer from './songs/song_detail_container';
 import UserContainer from './users/user_container';
+import AudioPlayerContainer from './audio_player/audio_player_container';
 import {
   Route,
   Redirect,
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path="/users/:userId" component={ UserContainer }  />
     </div>
     <footer>
+      <AudioPlayerContainer />
     </footer>
 
   </div>
