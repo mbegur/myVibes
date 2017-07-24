@@ -8,7 +8,6 @@ const rootReducer = combineReducers({
   session: AuthReducer,
   songs: SongReducer,
   user: UserReducer,
-  audioPlayer: AudioPlayerReducer,
 });
 
 export default rootReducer;
