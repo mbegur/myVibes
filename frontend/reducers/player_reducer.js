@@ -5,18 +5,16 @@ import {
   QUEUE_SONG,
 } from '../actions/audio_player_actions';
 
+const defaultState = {
+  currentSong: null,
+};
+
 const AudioPlayerReducer = (state = [], action) => {
   let nextState;
   Object.freeze(state);
   switch (action.type) {
     case PLAY_SONG:
-      const nextSong = [{
-        name: action.song.title,
-        url: action.song.song_url,
-        img: action.song.image_url
-      }];
-      nextState = Object.assign({}, state);
-      return nextState.concat[nextSong];
-    case NEXT_SONG:
+      Object.assign({}, state, {currentSong: action.song.id});
   }
+
 };

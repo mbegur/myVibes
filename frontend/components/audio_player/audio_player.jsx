@@ -23,12 +23,11 @@ class AudioPlayer extends React.Component {
 
   renderAudioPlayer() {
     const audioStyles = {
-      width: `${screen.width}px`,
+      width: '100%',
       position: 'fixed',
       bottom: '0',
-      backgroundColor: 'black',
-      opacity: '0.95',
-      zIndex: '100'
+      backgroundColor: 'white',
+      zIndex: '100',
     };
 
     return (
