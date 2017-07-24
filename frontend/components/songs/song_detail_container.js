@@ -5,6 +5,7 @@ import {
   requestSingleSong,
   clearErrors,
   deleteSong,
+  receiveSingleSong
   } from '../../actions/song_actions';
 
 
@@ -16,7 +17,8 @@ const mapStateToProps = (state, { match }) => ({
 const mapDispatchToProps = dispatch => ({
   requestSingleSong: id => dispatch(requestSingleSong(id)),
   deleteSong: id => dispatch(deleteSong(id)),
-  requestAllSongs: () => dispatch(requestAllSongs())
+  requestAllSongs: () => dispatch(requestAllSongs()),
+  receiveSingleSong: (song) => dispatch(receiveSingleSong(song)),
 });
 
 export default connect(

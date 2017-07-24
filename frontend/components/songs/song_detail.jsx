@@ -8,6 +8,7 @@ class SongDetail extends React.Component {
     super(props);
     console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.playTheSong = this.playTheSong.bind(this);
   }
   //
   componentDidMount() {
@@ -29,6 +30,14 @@ class SongDetail extends React.Component {
     }
   }
 
+  playTheSong(song) {
+    return e => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.receiveSingleSong(song);
+    };
+  }
+
   render() {
     const { song, currentUser } = this.props;
     if (!song) {
@@ -47,14 +56,24 @@ class SongDetail extends React.Component {
           <NavBarContainer />
         </header>
         <div className="song-detail-page">
-          <h1>{song.title}</h1>
-          {song.user.username}
+          <div className='song-deets'>
+            <button className="play-button" onClick={this.playTheSong(song)}>
+              <img src="http://res.cloudinary.com/mbegur/image/upload/v1500875354/if_button_green_play_50029_klsfgj.png" alt="Play_Button" height="55" width="55"></img>
+            </button>
+
+            <div className='song-detail-title'>{song.title}</div>
+            <div className='song-detail-username'>{song.user.username}</div>
+
+
+            { deleteButton }
+            <div className='song-detail-description'>{song.description}</div>
+          </div>
           <img className="song-detail-image"
-            height="180"
-            width="180"
+            height="300"
+            width="300"
             src={song.image_file_name}
             alt="cover-photo" />
-          { deleteButton }
+
         </div>
       </div>
     );

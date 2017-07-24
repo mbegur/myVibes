@@ -5,27 +5,42 @@
   align-content: center;
   // align-items: center;
   justify-content: center;
-  background-color: #BAF9DF;
+  background-color: white;
 }
 
 .song-detail-page {
+  background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500919682/e594706ff5486cd6bcc95affd28490ae_l5hzsw.jpg');
   display: flex;
-  flex-direction: column;
+  // flex-direction: row;
   width: 80%;
-  justify-content: center;
+  justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
   background-color: white;
   align-items: center;
-  // h1 {
-  //   // margin-left: 10%;
-  //   border-bottom: 2px solid #BAF9DF;
-  //   width: 70%;
-  // }
-  //
-  // div {
-  //   align-items: center;
-  //   font-size: 20px;
-  //   margin-left: 15%;
-  // }
+
+}
+
+.song-deets {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2%;
+  margin-bottom: 20%;
+}
+
+.song-detail-image {
+  padding: 2%
+}
+
+.song-detail-title {
+  font-size: 36px;
+}
+
+.song-detail-username {
+  font-size: 18px;
+
+}
+.delete-button {
+  margin-top: 0;
 }
