@@ -24,3 +24,20 @@ export const allCommentsBySong = (state) => {
   const commentArray = values(state.comments.comments);
   return commentArray.reverse();
 };
+
+export const fourRandomSongs = (state) => {
+  const allSongs = selectAllSongs(state);
+  let randomSongs = [];
+  let randomSingleSong;
+  if (allSongs.length > 4) {
+    while (randomSongs.length < 4) {
+      randomSingleSong = allSongs[Math.floor(Math.random()*allSongs.length)];
+      if (!randomSongs.includes(randomSingleSong)) {
+        randomSongs.push(randomSingleSong);
+      }
+    }
+  } else {
+    randomSongs = selectAllSongs(state);
+  }
+  return randomSongs;
+};

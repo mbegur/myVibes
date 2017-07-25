@@ -60,7 +60,7 @@ class SongDetail extends React.Component {
           <div className='song-deets'>
             <div className='play-button-and-other-deets'>
               <button className="play-button" onClick={this.playTheSong(song)}>
-                <img src="http://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
+                <img src="https://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
               </button>
               <div>
                 <div className='song-detail-title'>{song.title}</div>
