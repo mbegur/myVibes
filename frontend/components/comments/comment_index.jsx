@@ -73,7 +73,7 @@ class CommentIndex extends React.Component {
       return <li className='comment-item' key={idx}>
               <div>
                 <Link to={`/user/${comment.user_id}`}>
-                  <h6>{comment.user_username}</h6>
+                  <h4>{comment.user_username}</h4>
                 </Link>
               </div>
               <div className='comment-info'>
@@ -92,9 +92,13 @@ class CommentIndex extends React.Component {
       <div className="comment-form-container">
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
-          <input className="comment-input" value={this.state.body} onChange={this.setBody} />
-          <input type='submit' value='Submit' />
+          <input className="comment-input"
+            value={this.state.body}
+            onChange={this.setBody}
+            placeholder="Write a Comment" />
+          <input className='comment-submit' type='submit' value='Submit' />
         </form>
+        <br /><br />
         <ul className='comment-list'>
           {allComments}
         </ul>

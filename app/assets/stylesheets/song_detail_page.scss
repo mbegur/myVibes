@@ -9,15 +9,15 @@
 }
 
 .song-detail-page {
-  background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
-  // background-color: black;
+  // background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
+  background-color: #CCE2B4;
   display: flex;
   // flex-direction: row;
   width: 80%;
   justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
-  background-color: #e8fdf3;
+  // background-color: #e8fdf3;
   align-items: center;
 
 }
@@ -29,7 +29,7 @@
   // justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
-  background-color: #e8fdf3;
+  background-color: #B4C9E2;
   align-items: center;
 
 }
@@ -49,9 +49,32 @@
 
 }
 
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 .comment-input {
   width: 25em;
+  background-color: white;
+}
+
+.comment-submit {
+  background-color: #3CB371;
+  padding: 5px;
+}
+.comment-submit:hover {
+  opacity: .8;
+}
+
+.delete-button {
+  background-color: gray;
+  padding: 5px;
+}
+
+.delete-button:hover {
+  opacity: .8;
 }
 
 .song-deets {

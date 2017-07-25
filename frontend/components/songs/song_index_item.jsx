@@ -23,14 +23,14 @@ class SongIndexItem extends React.Component {
       <div className='overall-song-index-item'>
         <li className="song-index-item">
           <Link to={`/songs/${song.id}`}>
-            <img className="song-index-image" height="180" width="180" src={song.image_file_name} alt="cover-photo" />
+            <img className="song-index-image" height="150" width="150" src={song.image_file_name} alt="cover-photo" />
           </Link>
-
+          &nbsp;&nbsp;&nbsp;
             <button className="play-button" onClick={this.playTheSong(song)}>
               <img src="http://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
             </button>
 
-
+            &nbsp;&nbsp;&nbsp;
             <ul>
               <li className="song-title">
                 <Link className="link-to_song" to={`/songs/${song.id}`}>
