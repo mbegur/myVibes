@@ -43,9 +43,11 @@
 
 .auth-buts {
   height: 30px;
-  padding: 0 15px;
+  padding: 0 5px;
   background-color : transparent;
-  border: 1px solid white;
+  // border: 1px solid white;
+  border: none;
+  outline: none;
   border-radius: 5px;
   color: white;
 
@@ -57,9 +59,9 @@
   // letter-spacing: 1px;
 
   // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  -webkit-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
--moz-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+//   -webkit-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+// -moz-box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
+// box-shadow: 0px 3px 40px 4px rgba(245,237,245,1);
 color: #3CB371;
 }
 

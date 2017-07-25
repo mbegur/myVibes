@@ -9,7 +9,7 @@
 }
 
 .song-detail-page {
-  // background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
+  background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
   // background-color: black;
   display: flex;
   // flex-direction: row;
@@ -22,15 +22,36 @@
 
 }
 
-.comment-form-container {
+.comment-container {
   display: flex;
-  // flex-direction: row;
+  flex-direction: column;
   width: 80%;
-  justify-content: space-between;
+  // justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
   background-color: #e8fdf3;
   align-items: center;
+
+}
+
+.comment-form-container {
+
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  form input[type="text"] {
+    width: 50em;
+  }
+
+
+
+}
+
+
+.comment-input {
+  width: 25em;
 }
 
 .song-deets {

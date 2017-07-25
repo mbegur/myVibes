@@ -92,8 +92,8 @@ class CommentIndex extends React.Component {
       <div className="comment-form-container">
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
-          <textarea value={this.state.body} onChange={this.setBody} /><br/>
-          <input type='submit' value='Submit Comment' />
+          <input className="comment-input" value={this.state.body} onChange={this.setBody} />
+          <input type='submit' value='Submit' />
         </form>
         <ul className='comment-list'>
           {allComments}
