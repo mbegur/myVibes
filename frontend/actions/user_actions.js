@@ -31,12 +31,12 @@ export const requestSingleUser = id => dispatch => (
   ))
 );
 
-// export const updateUser = (id, user) => dispatch => {
-//   return APIUtil.updateUser(id, user).then(user =>
-//     dispatch(receiveSingleUser(user)),
-//     errors => dispatch(userErrors(errors.responseJSON))
-//   );
-// };
+export const updateUser = (id, user) => dispatch => {
+  return APIUtil.updateUser(id, user).then(user =>
+    dispatch(receiveSingleUser(user)),
+    errors => dispatch(userErrors(errors.responseJSON))
+  );
+};
 
 export const requestSongsByUser = id => dispatch => (
   APIUtil.fetchAllSongsByUser(id).then(songs => (

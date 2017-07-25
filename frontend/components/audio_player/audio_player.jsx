@@ -5,7 +5,6 @@ import Audio from 'react-audioplayer';
 class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
 
     this.renderAudioPlayer = this.renderAudioPlayer.bind(this);
     this.remountCount = 0;

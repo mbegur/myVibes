@@ -82,7 +82,6 @@ class SongForm extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className="overall-upload-form">
         {this.renderErrors()}

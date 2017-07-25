@@ -7,7 +7,6 @@ class SongDetail extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
     this.playTheSong = this.playTheSong.bind(this);
   }

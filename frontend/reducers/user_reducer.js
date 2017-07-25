@@ -14,7 +14,7 @@ const UserReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_SINGLE_USER:
       const newState = Object.assign({}, state);
-      return Object.assign(newState,{ user: action.user });
+      return Object.assign(newState, { user: action.user });
     case RECEIVE_USER_SONGS:
       const newState2 = Object.assign({}, state);
       return Object.assign({}, newState2, { songs: action.songs });

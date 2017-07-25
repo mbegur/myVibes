@@ -17,7 +17,6 @@ class SongIndexItem extends React.Component {
 
   render() {
     const { song, receiveSingleSong } = this.props;
-    console.log(song.user);
 
     return (
       <div className='overall-song-index-item'>

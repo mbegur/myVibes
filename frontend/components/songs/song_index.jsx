@@ -11,7 +11,6 @@ class SongIndex extends React.Component {
 
   render() {
     const { songs, receiveSingleSong, playSong } = this.props;
-    console.log(this.props);
     const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
     //
     return (

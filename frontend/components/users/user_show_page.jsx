@@ -1,11 +1,20 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import SongIndexItem from '../songs/song_index_item';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class UserShowPage extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
 
+    this.setProfilePic = this.setProfilePic.bind(this);
+  }
+
+  setProfilePic(e) {
+    let formData = new formData;
+    formData.append("user[image]", e.currentTarget.files[0]);
+    this.props.updateUser(this.props.currentUser.id, formData);
   }
 
   componentDidMount(){
@@ -25,13 +34,49 @@ class UserShowPage extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    console.log(this.props);
+    const { user, currentUser, songs, receiveSingleSong } = this.props;
+    let songList;
+    let editProfPicButton;
+    if (!this.props.user) {
+      return null;
+    }
+    const profilePic = user.profile_pic_url;
+
+
+    if (this.props.songs.length > 0) {
+      songList = songs.map((song, idx) =>
+      (<SongIndexItem key={`song-${idx}`} song={song} receiveSingleSong={receiveSingleSong}/>));
+      } else {
+        songList = <div className='no-songs'><h3>{this.props.user.username} has no songs.</h3>
+        </div>;
+      }
+
+      if (user.id === currentUser.id) {
+            editProfPicButton =
+            <label htmlFor='prof-upload'>
+              Profile Picture
+              <input type="file"
+                onChange={this.updateProf}
+                id='prof-upload' />
+            </label>;
+}
+
+
     return(
       <div>
+        <header>
+          <NavBarContainer />
+        </header>
         {user.username}
-      </div>
+        <img src={profilePic} alt={user.username}/>
+        {editProfPicButton}
+        {songList}
 
+      </div>
     );
+
+
   }
 
 }
@@ -44,3 +89,8 @@ export default UserShowPage;
 //     }
 //   </div>
 // </div>
+
+//
+// <span className='add-prof-button'>
+// <i className="fa fa-fw fa-camera" aria-hidden="true"></i>
+//   &nbsp;Profile Picture</span>

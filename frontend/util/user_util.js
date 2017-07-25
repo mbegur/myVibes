@@ -13,12 +13,12 @@ export const fetchAllSongsByUser = id => (
   })
 );
 
-// export const updateUser = (id, formData) => (
-//   $.ajax({
-//     method: 'PATCH',
-//     url: `/api/users/${id}`,
-//     processData: false,
-//     contentType: false,
-//     data: formData
-//   })
-// );
+export const updateUser = (id, formData) => (
+  $.ajax({
+    method: 'POST',
+    url: `/api/users/${id}`,
+    processData: false,
+    contentType: false,
+    data: formData
+  })
+);
