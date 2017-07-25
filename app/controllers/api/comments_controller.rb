@@ -2,6 +2,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       render :show
     else
@@ -10,9 +11,13 @@ class Api::CommentsController < ApplicationController
 
   end
 
-  def index 
+  def index
+    # @comments = Comment.where("track_id = ?", params:[:trackId]).includes(:user)
     @comments = Comment.all
+    render :index
   end
+
+
 
   def show
     @comment = Comment.find(params[:id])
@@ -22,6 +27,12 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     render :show
+  end
+
+  def song_comments
+    @song = Song.find(params[:id])
+    @comments = @song.comments
+    render :index
   end
 
   private

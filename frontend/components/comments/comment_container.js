@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import CommentList from './comment_list';
+import CommentIndex from './comment_index';
 
 import { createComment, deleteComment,
-         fetchCommentsBySong, clearComments,
+         requestCommentsBySong, clearComments,
          clearCommentErrors } from '../../actions/comment_actions';
 import { allCommentsBySong } from '../../reducers/selectors';
 
@@ -11,17 +11,15 @@ const mapStateToProps = (state, ownProps) => {
   comments: allCommentsBySong(state),
   errors: state.comments.errors,
   songId: ownProps.songId,
-  currentUser: state.session.currentUser
+  // currentUser: state.session.currentUser
 };
 };
 
 const mapDispatchToProps = dispatch => ({
-  createComment: comment => dispatch(createComment(comment)),
+  createComment: comment => dispatch(createComment({ comment } )),
   deleteComment: id => dispatch(deleteComment(id)),
-  fetchCommentsBySong: id => dispatch(fetchCommentsBySong(id)),
-  clearComments: () => dispatch(clearComments()),
+  requestCommentsBySong: id => dispatch(requestCommentsBySong(id)),
   clearCommentErrors: () => dispatch(clearCommentErrors())
 });
 
-export default connect(mapStateToProps,
-                       mapDispatchToProps)(CommentList);
+export default connect(mapStateToProps,mapDispatchToProps)(CommentIndex);

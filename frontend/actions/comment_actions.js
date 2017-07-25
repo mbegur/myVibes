@@ -36,9 +36,9 @@ export const clearCommentErrors = () => ({
 });
 
 export const createComment = comment => dispatch => {
-  return CommentApiUtil.createComment(comment).then(_comment =>
-    dispatch(receiveComment(_comment)),
-    error => dispatch(commentErrors(error.responseJSON))
+  return CommentApiUtil.createComment(comment).then(comment =>
+    dispatch(receiveComment(comment)),
+    errors => dispatch(commentErrors(errors.responseJSON))
   );
 };
 
@@ -48,8 +48,8 @@ export const deleteComment = id => dispatch => (
   ))
 );
 
-export const fetchCommentsBySong = id => dispatch => (
-  CommentApiUtil.fetchCommentsBySong(id).then((comments) => (
+export const requestCommentsBySong = songId => dispatch => (
+  CommentApiUtil.fetchAllCommentsBySong(songId).then((comments) => (
     dispatch(receiveComments(comments))
   ))
 );

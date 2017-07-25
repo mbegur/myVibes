@@ -22,6 +22,17 @@
 
 }
 
+.comment-form-container {
+  display: flex;
+  // flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  // border: solid 2px black;
+  align-self: center;
+  background-color: #e8fdf3;
+  align-items: center;
+}
+
 .song-deets {
   display: flex;
   justify-content: space-between;

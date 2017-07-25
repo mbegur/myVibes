@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import CommentContainer from '../comments/comment_container';
 
 class SongDetail extends React.Component {
 
@@ -78,6 +79,10 @@ class SongDetail extends React.Component {
             src={song.image_file_name}
             alt="cover-photo" />
 
+        </div>
+        <div className="comment-container">
+          <h1>Comments</h1><br />
+          <CommentContainer songId={song.id}/>
         </div>
       </div>
     );
