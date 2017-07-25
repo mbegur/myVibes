@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :songs, only: [:create, :destroy, :update, :show, :index]
     resources :comments, only: [:create, :destroy, :index, :show]
     get 'song/:id/comments', to: 'comments#song_comments'
-
+    get 'user/:id/songs', to: 'songs#user_songs'
   end
 
 end

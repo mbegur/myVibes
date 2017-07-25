@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :songs
 
   has_many :comments
+
+  has_attached_file :image, presence: true, url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'myvibes'
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  validates_with AttachmentSizeValidator, attributes: :image, less_than: 3.megabytes
   
   after_initialize :ensure_session_token
 

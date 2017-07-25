@@ -17,7 +17,7 @@ class NavBar extends React.Component {
 
   logOutUser(e) {
     e.preventDefault();
-    this.props.logout(); //.then(() => this.props.history.push("/"));
+    this.props.logout().then(() => this.props.history.push("/"));
   }
 
   render() {
@@ -40,7 +40,7 @@ class NavBar extends React.Component {
               <SongUploadModal clearSongErrors={this.props.clearSongErrors}
             user={this.props.currentUser.id}
             type="upload"/>
-              <Link to='/'><button className="auth-buts" onClick={this.logOutUser}>Log Out</button></Link>
+              <button className="auth-buts" onClick={this.logOutUser}>Log Out</button>
             </div>
 
           </div>
@@ -78,7 +78,7 @@ class NavBar extends React.Component {
 
 }
 
-export default NavBar;
+export default withRouter(NavBar);
 
 // <div className="welcome-text">
 //   <h3>Connect on myVibes</h3>

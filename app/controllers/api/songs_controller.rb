@@ -33,7 +33,12 @@ class Api::SongsController < ApplicationController
     render "api/songs/show"
   end
 
-
+  def user_songs
+    @user = User.find(params[:id])
+    @songs = @user.songs
+    render :index
+  end
+  
 
   private
 

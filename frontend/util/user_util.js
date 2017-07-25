@@ -6,12 +6,19 @@ export const fetchSingleUser = id => (
   })
 );
 
-export const updateUser = (id, formData) => (
+export const fetchAllSongsByUser = id => (
   $.ajax({
-    method: 'PATCH',
-    url: `/api/users/${id}`,
-    processData: false,
-    contentType: false,
-    data: formData
+    method: 'GET',
+    url: `/api/user/${id}/songs`
   })
 );
+
+// export const updateUser = (id, formData) => (
+//   $.ajax({
+//     method: 'PATCH',
+//     url: `/api/users/${id}`,
+//     processData: false,
+//     contentType: false,
+//     data: formData
+//   })
+// );

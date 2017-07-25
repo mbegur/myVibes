@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 class UserShowPage extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
+
   }
 
   componentDidMount(){
@@ -13,18 +15,21 @@ class UserShowPage extends React.Component {
    });
  }
 
+ componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.requestSingleUser(parseInt(nextProps.match.params.userId))
+      .then(()=> {
+        this.props.requestSongsByUser(parseInt(nextProps.match.params.userId));
+      });
+    }
+  }
+
   render() {
-
+    const { user } = this.props;
     return(
-      <div className="user_page">
-        <div className="user-box">
-          {this.props.user.username ? <div>{this.props.user.username}</div> :
-          <div></div>
-          }
-        </div>
+      <div>
+        {user.username}
       </div>
-
-
 
     );
   }
@@ -32,3 +37,10 @@ class UserShowPage extends React.Component {
 }
 
 export default UserShowPage;
+// <div className="user_page">
+//   <div className="user-box">
+//     {this.props.user.username ? <div>{this.props.user.username}</div> :
+//     <div></div>
+//     }
+//   </div>
+// </div>

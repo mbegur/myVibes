@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
-import { requestSingleUser, requestSongsByUser, updateUser} from '../../actions/user_actions';
+import { requestSingleUser, requestSongsByUser } from '../../actions/user_actions';
 import UserShowPage from './user_show_page';
-import { selectAllSongs } from '../../reducers/selectors';
+import { allSongsByUser } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  user: state.user,
-  songs: selectAllSongs(state),
+  user: state.user.user,
+  songs: allSongsByUser(state),
   // errors: state.user.errors,
 });
 
 const mapDispatchToProps = dispatch => ({
   requestSingleUser: id => dispatch(requestSingleUser(id)),
-  requestSongsByUser: id => dispatch(requestSongsByUser(id)),
-  updateUser: (id, user) => dispatch(updateUser(id, user))
+  requestSongsByUser: id => dispatch(requestSongsByUser(id))
 });
+
+
 
 export default connect(
   mapStateToProps,

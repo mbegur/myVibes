@@ -41,3 +41,7 @@ export const fourRandomSongs = (state) => {
   }
   return randomSongs;
 };
+
+export const allSongsByUser = state => {
+  return values(state.user.songs);
+};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CommentContainer from '../comments/comment_container';
 
@@ -89,4 +89,4 @@ class SongDetail extends React.Component {
   }
 }
 
-export default SongDetail;
+export default withRouter(SongDetail);

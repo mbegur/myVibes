@@ -26,20 +26,20 @@ export const receiveUserSongs = songs => {
 };
 
 export const requestSingleUser = id => dispatch => (
-  APIUtil.fetchUser(id).then(user => (
+  APIUtil.fetchSingleUser(id).then(user => (
     dispatch(receiveSingleUser(user))
   ))
 );
 
-export const updateUser = (id, user) => dispatch => {
-  return APIUtil.updateUser(id, user).then(user =>
-    dispatch(receiveSingleUser(user)),
-    errors => dispatch(userErrors(errors.responseJSON))
-  );
-};
+// export const updateUser = (id, user) => dispatch => {
+//   return APIUtil.updateUser(id, user).then(user =>
+//     dispatch(receiveSingleUser(user)),
+//     errors => dispatch(userErrors(errors.responseJSON))
+//   );
+// };
 
 export const requestSongsByUser = id => dispatch => (
-  APIUtil.fetchSongsByUser(id).then(songs => (
+  APIUtil.fetchAllSongsByUser(id).then(songs => (
     dispatch(receiveUserSongs(songs))
   ))
 );
