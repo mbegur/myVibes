@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  attr_accessor :password
+  attr_accessor :password, :coverpic_file_name
 
   def self.find_by_user_credentials(username, password)
     user = User.find_by_username(username)
