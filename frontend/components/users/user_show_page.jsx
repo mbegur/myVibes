@@ -9,11 +9,18 @@ class UserShowPage extends React.Component {
     // console.log(this.props);
 
     this.setProfilePic = this.setProfilePic.bind(this);
+    this.setCoverPic = this.setCoverPic.bind(this);
   }
 
   setProfilePic(e) {
-    let formData = new formData;
+    let formData = new FormData();
     formData.append("user[image]", e.currentTarget.files[0]);
+    this.props.updateUser(this.props.currentUser.id, formData);
+  }
+
+  setCoverPic(e) {
+    let formData = new FormData();
+    formData.append("user[coverpic]", e.currentTarget.files[0]);
     this.props.updateUser(this.props.currentUser.id, formData);
   }
 
@@ -38,10 +45,12 @@ class UserShowPage extends React.Component {
     const { user, currentUser, songs, receiveSingleSong } = this.props;
     let songList;
     let editProfPicButton;
+    let editCoverPicButton;
     if (!this.props.user) {
       return null;
     }
     const profilePic = user.profile_pic_url;
+    const coverPic = user.cover_pic_url;
 
 
     if (this.props.songs.length > 0) {
@@ -57,21 +66,47 @@ class UserShowPage extends React.Component {
             <label htmlFor='prof-upload'>
               Profile Picture
               <input type="file"
-                onChange={this.updateProf}
-                id='prof-upload' />
+                onChange={this.setProfilePic}
+                id='prof-upload'
+                style={{'display': 'none'}}/>
             </label>;
-}
 
+            editCoverPicButton =
+            <label htmlFor='cover-upload'>
+              Cover Photo
+              <input type="file"
+                onChange={this.setCoverPic}
+                id='cover-upload'
+                style={{'display': 'none'}}/>
+            </label>;
+          }
+
+        const bannerPictureStyle = {
+          height: '100%',
+          width: '100%',
+          backgroundImage: `url(${coverPic})`
+        };
 
     return(
-      <div>
+      <div className="overall-user-page">
         <header>
           <NavBarContainer />
         </header>
-        {user.username}
-        <img src={profilePic} alt={user.username}/>
-        {editProfPicButton}
-        {songList}
+        <div className="user-page">
+          <div className="header-user-page">
+            <button>{editProfPicButton}</button>
+            <button>{editCoverPicButton}</button>
+            {user.username}
+            <div className="banner" style={bannerPictureStyle}>
+              <img className="prof-pic" height="150" width="150" src={profilePic} alt={user.username} style={{'position': 'absolute'}}/>
+            </div>
+
+          </div>
+          <div className="songs-user-page">
+            {songList}
+          </div>
+        </div>
+
 
       </div>
     );
@@ -94,3 +129,5 @@ export default UserShowPage;
 // <span className='add-prof-button'>
 // <i className="fa fa-fw fa-camera" aria-hidden="true"></i>
 //   &nbsp;Profile Picture</span>
+
+// <img className="cover-pic" height="400" width="400" src={coverPic} alt={user.username} style={{'position': 'absolute'}}/>
