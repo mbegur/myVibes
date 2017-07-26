@@ -8,6 +8,6 @@
 
 User.destroy_all
 Song.destroy_all
-# 
-# u1i =
+
+# u1i = 
 # u1 = User.create(username: "mallikb", password: "password", profile_pic_url: u1i);

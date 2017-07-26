@@ -17,6 +17,12 @@ class SplashIndexItem extends React.Component {
 
   render() {
     const { song, receiveSingleSong } = this.props;
+    let songTitle;
+    if (song.title.length > 32) {
+      songTitle = song.title.slice(0, 30) + "...";
+    } else {
+      songTitle = song.title;
+    }
 
     return (
       <div className='overall-splash-container'>
@@ -36,7 +42,7 @@ class SplashIndexItem extends React.Component {
             <ul className="splash-list">
               <li className="splash-title">
                 <Link className="link-to_song" to={`/songs/${song.id}`}>
-                  <button className="splash-Detail">{ song.title }</button>
+                  <button className="splash-Detail">{ songTitle }</button>
                 </Link>
               </li>
               <li className="splash-username">
@@ -58,7 +64,7 @@ class SplashIndexItem extends React.Component {
 }
 
 export default SplashIndexItem;
-// 
+//
 // &nbsp;&nbsp;&nbsp;
 //
 //
