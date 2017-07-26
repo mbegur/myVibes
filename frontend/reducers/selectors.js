@@ -42,6 +42,21 @@ export const fourRandomSongs = (state) => {
   return randomSongs;
 };
 
+export const fiveRandomSongs = (state) => {
+  if (selectAllSongs(state).length > 5) {
+    let copyofAllSongs = selectAllSongs(state);
+    for (var i = copyofAllSongs.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = copyofAllSongs[i];
+      copyofAllSongs[i] = copyofAllSongs[j];
+      copyofAllSongs[j] = temp;
+    }
+    return copyofAllSongs.slice(0, 5);
+  } else {
+    return selectAllSongs(state);
+  }
+};
+
 export const allSongsByUser = state => {
   return values(state.user.songs);
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SessionModal from '../nav_bar/session_modal';
+import SplashIndexContainer from './splash_index_container';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Splash extends React.Component {
 
   render() {
     return(
+      <div>
       <div className="hero-image">
         {this.props.currentUser ?
           <div className="if-user-logged-in">
@@ -63,7 +65,11 @@ class Splash extends React.Component {
 
 
       </div>
+        <div>
+          <SplashIndexContainer />
+        </div>
 
+      </div>
 
 
     );
