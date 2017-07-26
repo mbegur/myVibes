@@ -44,6 +44,7 @@ class UserShowPage extends React.Component {
     console.log(this.props);
     const { user, currentUser, songs, receiveSingleSong } = this.props;
     let songList;
+    let songListHeader;
     let editProfPicButton;
     let editCoverPicButton;
     if (!this.props.user) {
@@ -60,11 +61,14 @@ class UserShowPage extends React.Component {
         songList = <div className='no-songs'><h3>{this.props.user.username} has no songs.</h3>
         </div>;
       }
+    // if (this.props.songs.length > 0) {
+    //   songListHeader = <h2>Your Tracks</h2>;
+    //   }
 
       if (user.id === currentUser.id) {
             editProfPicButton =
             <label htmlFor='prof-upload'>
-              Profile Picture
+              Update Photo
               <input type="file"
                 onChange={this.setProfilePic}
                 id='prof-upload'
@@ -73,7 +77,7 @@ class UserShowPage extends React.Component {
 
             editCoverPicButton =
             <label htmlFor='cover-upload'>
-              Cover Photo
+              Update Cover Photo
               <input type="file"
                 onChange={this.setCoverPic}
                 id='cover-upload'
@@ -94,15 +98,39 @@ class UserShowPage extends React.Component {
         </header>
         <div className="user-page">
           <div className="header-user-page">
-            <button>{editProfPicButton}</button>
-            <button>{editCoverPicButton}</button>
-            {user.username}
+
+
+
             <div className="banner" style={bannerPictureStyle}>
-              <img className="prof-pic" height="150" width="150" src={profilePic} alt={user.username} style={{'position': 'absolute'}}/>
+              <div className="between-left-middle">
+                <div className="header-left">
+                  <div className="header-top">
+                    <img className="prof-pic" height="170" width="170" src={profilePic} alt={user.username} />
+
+                  </div>
+
+                  <div>
+                    {editProfPicButton}
+                  </div>
+                </div>
+                <div>
+                  <text>{user.username}</text>
+                </div>
+              </div>
+
+
+
+              <div className="header-right">
+                {editCoverPicButton}
+              </div>
             </div>
 
           </div>
           <div className="songs-user-page">
+            <br />
+            <h2>Tracks</h2>
+              <br />
+
             {songList}
           </div>
         </div>

@@ -34,9 +34,13 @@ class NavBar extends React.Component {
 
             <div className="auth-buttons">
               <Link to={`/users/${this.props.currentUser.id}`}>
-              <button className="username-nav">
-                {this.props.currentUser.username}
-              </button></Link>
+                <img height="35" width="35" src={this.props.currentUser.profile_pic_url}></img>
+              </Link>
+              <Link to={`/users/${this.props.currentUser.id}`}>
+                <button className="username-nav">
+                  {this.props.currentUser.username}
+                </button>
+              </Link>
               <SongUploadModal clearSongErrors={this.props.clearSongErrors}
             user={this.props.currentUser.id}
             type="upload"/>
@@ -46,7 +50,9 @@ class NavBar extends React.Component {
           </div>
           : <div className="if-user-logged-out">
           <div className="header">
-            <h1>myVibes</h1>
+            <Link to='/'>
+              <button className='logo-buts'><h1>myVibes</h1></button>
+            </Link>
           </div>
           <div className="auth-buttons">
 

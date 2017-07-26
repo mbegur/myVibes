@@ -68,7 +68,10 @@ body, div, nav, h2, h1, h3, button, html, p {
   flex-direction: row;
   margin: 25px 0;
   // outline: none;
-
+  img {
+    border-radius: 50%;
+    margin-right: -14px;
+  }
   button {
     margin: 0 10px;
   }

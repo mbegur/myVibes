@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 3.megabytes
 
-  has_attached_file :coverpic, presence: true, default_url: "https://res.cloudinary.com/mbegur/image/upload/v1501043635/2560x1440-white-solid-color-background_hltse2.jpg", url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'myvibes'
+  has_attached_file :coverpic, presence: true, default_url: "http://res.cloudinary.com/mbegur/image/upload/v1501055305/QGj5HZS_jdfvcz.jpg", url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'myvibes'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 3.megabytes
 
