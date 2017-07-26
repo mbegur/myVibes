@@ -15,7 +15,7 @@ class SplashIndex extends React.Component {
     return (
 
         <div className="splash-index-page">
-          <h3>Hear what's trending in the myVibes community</h3>
+          <h1 className="splash-header">Hear what's trending in the myVibes community</h1>
           <div className="splash-index-list">
             { allSongs }
           </div>
