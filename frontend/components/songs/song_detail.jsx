@@ -16,8 +16,8 @@ class SongDetail extends React.Component {
   }
 
   // componentWillReceiveProps(nextProps) {
-  //   if (this.props.match.params.postId !== nextProps.match.params.postId) {
-  //     this.props.requestSingleSong(nextProps.match.params.postId);
+  //   if (this.props.match.params.songId !== nextProps.match.params.songId) {
+  //     this.props.requestSingleSong(nextProps.match.params.songId);
   //   }
   // }
 
