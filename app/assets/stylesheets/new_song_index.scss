@@ -1,0 +1,44 @@
+.new-overall-index-page {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  // align-content: center;
+  // align-items: center;
+  justify-content: center;
+  background-color: #BAF9DF;
+}
+
+.new-song-index-page {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  // border: solid 2px black;
+  align-self: center;
+  // align-items: center;
+  background-color: white;
+  align-items: center;
+  h1 {
+    // margin-left: 10%;
+    border-bottom: 2px solid #BAF9DF;
+    width: 90%;
+  }
+
+  .new-song-index-list {
+    display: flex;
+   flex-flow: wrap;
+   justify-content: center;
+  }
+
+
+
+  // div {
+  //   align-items: center;
+  //   font-size: 20px;
+  //   margin-left: 15%;
+  // }
+}
+
+.new-song-index-list-item {
+  margin: 10px;
+}

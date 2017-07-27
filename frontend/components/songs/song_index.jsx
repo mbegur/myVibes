@@ -14,13 +14,13 @@ class SongIndex extends React.Component {
     const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
     //
     return (
-      <div className="overall-index-page">
+      <div className="new-overall-index-page">
         <header>
           <NavBarContainer />
         </header>
-        <div className="song-index-page">
+        <div className="new-song-index-page">
           <h1>Stream</h1>
-          <ul className="song-index-list">
+          <ul className="new-song-index-list">
             { allSongs }
           </ul>
         </div>

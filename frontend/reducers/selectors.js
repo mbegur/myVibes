@@ -1,14 +1,15 @@
 import values from 'lodash/values';
 
 export const selectAllSongs = (state) => {
-  let songs = values(state.songs.songs);
-  for (var i = songs.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = songs[i];
-    songs[i] = songs[j];
-    songs[j] = temp;
-  }
-  return songs;
+  return values(state.songs.songs);
+  // let songs = values(state.songs.songs);
+  // for (var i = songs.length - 1; i > 0; i--) {
+  //   let j = Math.floor(Math.random() * (i + 1));
+  //   let temp = songs[i];
+  //   songs[i] = songs[j];
+  //   songs[j] = temp;
+  // }
+  // return songs;
 };
 export const selectListOfSongs = (state)=> {
   let playlist = [];
