@@ -19,7 +19,7 @@ const SongReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_ALL_SONGS:
       const songs = action.songs;
-      return merge({}, state, { songs });
+      return merge({}, state, { songs: songs, errors: [] });
     case RECEIVE_SINGLE_SONG:
       const newSong = action.song;
       newState = merge({}, state);
@@ -35,7 +35,7 @@ const SongReducer = (state = defaultState, action) => {
       return newState;
     case CLEAR_ERRORS:
       const newErrors = [];
-      return merge({}, state, { newErrors });
+      return merge({}, state, { errors: newErrors });
     default:
       return state;
   }

@@ -46,6 +46,10 @@ class SongForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors(this.props.errors);
+  }
+
   setTrack(e) {
     const file = e.currentTarget.files[0];
     var fileReader = new FileReader();
@@ -72,6 +76,24 @@ class SongForm extends React.Component {
     //   formData.append("song[track]", this.state.track);
     // }
 
+    // if (this.props.type === "upload") {
+    //   this.props.createSong(formData)
+    //   .then(data => {
+    //     this.props.history.push(`/song/${data.song.id}`);
+    //   });
+    // } else {
+    //   this.props.updateSong(this.state.id, formData)
+    //   .then(data => {
+    //     this.props.history.push(`/song/${data.song.id}`);
+    //   }).then(() => {
+    //     this.props.closeModal();
+    //   });
+    // }
+
+    // .then(() => {
+    //   this.props.closeModal();
+    // })
+
       this.props.createSong(formData).then(data => {
         this.props.history.push(`/songs/${data.song.id}`);
       });
@@ -82,6 +104,8 @@ class SongForm extends React.Component {
   }
 
   render(){
+
+
     return(
       <div className="overall-upload-form">
         <h1 className="upload-header">Upload a Song</h1>

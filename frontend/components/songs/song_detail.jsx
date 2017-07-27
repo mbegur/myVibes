@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CommentContainer from '../comments/comment_container';
+import SongUploadModal from '../songs/song_upload_modal';
+
 
 class SongDetail extends React.Component {
 
@@ -44,10 +46,17 @@ class SongDetail extends React.Component {
       return null;
     }
     let deleteButton;
+    let editButton;
     if (currentUser && currentUser.id === song.user_id) {
       deleteButton = <button
         className='delete-button'
         onClick={this.handleDelete}>Delete Song</button>;
+    }
+
+    if (currentUser && currentUser.id === song.user_id) {
+      editButton = <SongUploadModal clearSongErrors={this.props.clearSongErrors}
+    user={this.props.currentUser.id}
+    type="edit"/>;
     }
 
     return (
@@ -66,6 +75,7 @@ class SongDetail extends React.Component {
                 <div className='song-detail-username'>{song.user.username}</div>
 
                 { deleteButton }
+                { editButton }
                 <div className='song-detail-description'>{song.description}</div>
               </div>
 

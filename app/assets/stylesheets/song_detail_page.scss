@@ -5,12 +5,12 @@
   align-content: center;
   // align-items: center;
   justify-content: center;
-  background-color: #BAF9DF;
+  background-color: #ebebeb;
 }
 
 .song-detail-page {
   // background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
-  background-color: #CCE2B4;
+  background-color: #B9EDD9;
   display: flex;
   // flex-direction: row;
   width: 80%;
@@ -29,7 +29,7 @@
   // justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
-  background-color: #B4C9E2;
+  background-color: white;
   align-items: center;
   min-height: 100vh;
 
@@ -61,12 +61,13 @@
 
 .comment-input {
   width: 25em;
-  background-color: white;
+  background-color: lightgray;
 }
 
 .comment-submit {
   background-color: #3CB371;
   padding: 5px;
+  color: white;
 }
 .comment-submit:hover {
   opacity: .8;

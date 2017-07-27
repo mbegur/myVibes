@@ -26,6 +26,10 @@ export const selectListOfSongs = (state)=> {
         });
       }
     });
+
+    // if (playlist[0] === undefined) {
+    //   playlist = playlist.slice(1, playlist.length);
+    // }
   return playlist;
 };
 
