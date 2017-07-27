@@ -6,6 +6,8 @@
   // align-items: center;
   justify-content: center;
   background-color: #BAF9DF;
+
+
 }
 
 .new-song-index-page {
@@ -26,10 +28,9 @@
 
   .new-song-index-list {
     display: flex;
-   flex-flow: wrap;
-   justify-content: center;
+    flex-flow: wrap;
+    justify-content: center;
   }
-
 
 
   // div {
@@ -41,4 +42,8 @@
 
 .new-song-index-list-item {
   margin: 10px;
+}
+
+footer {
+  margin-top: 4%;
 }

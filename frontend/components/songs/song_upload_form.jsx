@@ -9,7 +9,7 @@ class SongForm extends React.Component {
       title: '',
       description: '',
       image: '',
-      image_url: '',
+      image_url: 'http://res.cloudinary.com/mbegur/image/upload/v1501176247/musicfile-512_ek2s9d.png',
       track: '',
       user_id: this.props.id};
     if (this.props.song) {
@@ -92,7 +92,7 @@ class SongForm extends React.Component {
             {this.state.image_url.length > 0 ? <img height="200" width="200" src={this.state.image_url}
                alt="album-art" /> : <div></div>}
             <br />
-            <p>Choose Cover Photo</p>
+            <p>Choose Cover Art</p>
             <input className="auth-input" type="file" onChange={this.setImage}/>
           </div>
           <div className='upload-form-right'>
