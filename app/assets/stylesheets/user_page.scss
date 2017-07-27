@@ -7,7 +7,6 @@
   justify-content: center;
   background-color: #BAF9DF;
 
-
 }
 
 .user-page {
@@ -110,4 +109,5 @@
 .users-songs {
   display: flex;
   flex-direction: row;
+  min-height: 80vh;
 }

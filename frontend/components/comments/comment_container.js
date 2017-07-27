@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   comments: allCommentsBySong(state),
   errors: state.comments.errors,
   songId: ownProps.songId,
-  // currentUser: state.session.currentUser
+  currentUser: state.session.currentUser
 };
 };
 

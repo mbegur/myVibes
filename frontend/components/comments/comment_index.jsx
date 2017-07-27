@@ -65,18 +65,26 @@ class CommentIndex extends React.Component {
 
 
   render(){
-    const { comments, errors } = this.props;
+    const { comments, errors, currentUser } = this.props;
     let trash;
 
     let allComments = comments.map((comment, idx) => {
       return <li className='comment-item' key={idx}>
               <div>
                 <Link to={`/user/${comment.user_id}`}>
-                  <h4>{comment.user_username}</h4>
+                  <h4>{currentUser.image_file_name}</h4>
                 </Link>
+                <div>
+                  <Link to={`/user/${comment.user_id}`}>
+                    {comment.user_username}
+                  </Link>
+                  
+                  {comment.body}
+                </div>
               </div>
+
               <div className='comment-info'>
-                {comment.body}<br/>
+                <br/>
               <span>{comment.time} ago&nbsp;</span>
               </div>
               </li>;

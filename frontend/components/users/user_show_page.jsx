@@ -61,7 +61,7 @@ class UserShowPage extends React.Component {
         songList = <div className='no-songs'><h3>{this.props.user.username} has no songs.</h3>
         </div>;
       }
-      if (user.id === currentUser.id) {
+      if (currentUser && user.id === currentUser.id) {
               editProfPicButton =
               <label htmlFor='prof-upload'>
                 Update Photo
