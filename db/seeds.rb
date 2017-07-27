@@ -75,8 +75,7 @@ u9 = User.create!(
 u10 = User.create!({
     username: "ChanceTheRapper",
     password: "password",
-    image: open("https://s3-us-west-1.amazonaws.com/myvibes/profile_pic_seeds/profilepic/img-chance-the-rapper_155057831397.jpg
-"),
+    image: open("https://s3-us-west-1.amazonaws.com/myvibes/profile_pic_seeds/profilepic/img-chance-the-rapper_155057831397.jpg"),
     coverpic: open("https://s3-us-west-1.amazonaws.com/myvibes/cover_pic_seeds/coverpic/download.jpeg")
     });
 
@@ -99,7 +98,7 @@ s3 = Song.create!({
   title: "We Belong Together",
   user_id: u1.id,
   image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/3b1400674a0257ceef8198a8a335b3f8.1000x1000x1.jpg"),
-  track: open("https://s3.console.aws.amazon.com/s3/object/myvibes/song_seeds/song/mariah-carey-we-belong-together.mp3?region=us-west-1&tab=overview")
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/letmeloveyou.mp3")
 })
 
 s4 = Song.create!({
@@ -117,8 +116,106 @@ s5 = Song.create!({
 })
 
 s6 = Song.create!({
-  title: "My Love ft. TI & Timbaland",
+  title: "The Weekend",
   user_id: u2.id,
-  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/Justin-Timberlake.jpg"),
-  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Justin+Timberlake+ft+TI+Timberland+-+My+0Love.mp3")
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/sza.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/SZA+-+The+Weekend2.mp3")
+})
+
+s7 = Song.create!({
+  title: "If I Ain't Got You",
+  user_id: u3.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/alica1.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/AliciaKeysCD106IfIAintGotYou.mp3")
+})
+
+s8 = Song.create!({
+  title: "Unthinkable",
+  user_id: u3.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/alicai2.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/unthinkable.mp3")
+})
+
+s9 = Song.create!({
+  title: "Lost",
+  user_id: u4.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/channel-orange.jpeg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Lost.mp3")
+})
+
+s10 = Song.create!({
+  title: "Let Me Love You",
+  user_id: u4.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/mario-let.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/letmeloveyou.mp3")
+})
+
+s11 = Song.create!({
+  title: "My Mine",
+  user_id: u5.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/jhene1.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Jhene+Aiko+-+My+Mine+-+HotNewHipHop.mp3")
+})
+
+s12 = Song.create!({
+  title: "July ft. Drake",
+  user_id: u5.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/jhene-aiko-souled-out-teaser-188x188.png"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Jhene+Aiko+-+July+feat+Drake+-+HotNewHipHop.mp3")
+})
+
+s13 = Song.create!({
+  title: "Love Yourz",
+  user_id: u6.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/jcole+art.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Love+Yourz.mp3")
+})
+
+s14 = Song.create!({
+  title: "She Knows",
+  user_id: u6.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/jcole-born-sinner-deluxe-e1369067089463.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/She+Knows+-+J.+Cole+(Lyrics).mp3")
+})
+
+s15 = Song.create!({
+  title: "My Love ft Drake",
+  user_id: u7.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/majid-jordan-album.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Majid-Jordan-Ft.-Drake-My-Love.mp3")
+})
+
+s16 = Song.create!({
+  title: "She Knows",
+  user_id: u7.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/place_likethis.jpeg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Majid+Jordan+A+Place+Like+This+Official+Video.mp3")
+})
+
+s17 = Song.create!({
+  title: "Get You Good",
+  user_id: u8.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/roy-woods-exis.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Roy+Woods+-+Get+You+Good+(Video).mp3")
+})
+
+s18 = Song.create!({
+  title: "Gwan Big Up Yourself",
+  user_id: u8.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/roywoods1.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Roy+Woods+-+Gwan+Big+Up+Urself+(Lyrics).mp3")
+})
+
+s19 = Song.create!({
+  title: "Best I Ever Had",
+  user_id: u9.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/drake-so-far-gona-art-ep-darkie-made_o6ek1a.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/10)+Best+I+Ever+Had.mp3")
+})
+
+s20 = Song.create!({
+  title: "Houstalantavegas",
+  user_id: u9.id,
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/Drake-Beard-Style-Fader_Drake_Peckmezian_high.jpg"),
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/02)+Houstatlantavegas.mp3")
 })

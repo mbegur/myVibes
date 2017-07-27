@@ -65,25 +65,7 @@ class UserShowPage extends React.Component {
     //   songListHeader = <h2>Your Tracks</h2>;
     //   }
 
-      if (currentUser && user.id === currentUser.id) {
-            editProfPicButton =
-            <label htmlFor='prof-upload'>
-              Update Photo
-              <input type="file"
-                onChange={this.setProfilePic}
-                id='prof-upload'
-                style={{'display': 'none'}}/>
-            </label>;
 
-            editCoverPicButton =
-            <label htmlFor='cover-upload'>
-              Update Cover Photo
-              <input type="file"
-                onChange={this.setCoverPic}
-                id='cover-upload'
-                style={{'display': 'none'}}/>
-            </label>;
-          }
 
         const bannerPictureStyle = {
           height: '100%',
