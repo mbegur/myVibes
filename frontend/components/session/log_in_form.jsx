@@ -44,7 +44,7 @@ class Login extends React.Component {
       username: 'guestuser',
       password: 'password'
     };
-    setTimeout(() => this.props.login({user}), 1500);
+    setTimeout(() => this.props.login(user), 1500);
     // e.preventDefault();
     // this.props.login({user: {username: "guestuser", password: "123456"}})
     // .then(() => this.props.history.push("/songs"));

@@ -12,7 +12,7 @@ class Splash extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    this.props.login({user: {username: "mallik", password: "123456"}}).then(() => this.props.history.push("/songs"));
+    this.props.login({user: {username: "guestuser", password: "password"}}).then(() => this.props.history.push("/songs"));
   }
 
   logOutUser(e) {

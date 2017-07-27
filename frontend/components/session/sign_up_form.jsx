@@ -31,8 +31,23 @@ class Signup extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    this.props.login({user: {username: "guestuser", password: "123456"}})
-    .then(() => this.props.history.push("/songs"));
+    let name = "guestuser";
+    let password = "password";
+    for (let i = 0; i < name.length; i++) {
+      setTimeout(() => this.setState({
+        username: name.slice(0, i + 1)}), (i * 80));
+    }
+    for (let j = 0; j < password.length; j++) {
+      setTimeout(() => this.setState({
+        password: password.slice(0, j + 1)}), ((j + 5) * 80));
+    }
+    const user = {
+      username: 'guestuser',
+      password: 'password'
+    };
+    setTimeout(() => this.props.login(user), 1500);
+    // this.props.login({user: {username: "guestuser", password: "123456"}})
+    // .then(() => this.props.history.push("/songs"));
   }
 
 

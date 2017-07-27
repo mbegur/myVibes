@@ -61,9 +61,25 @@ class UserShowPage extends React.Component {
         songList = <div className='no-songs'><h3>{this.props.user.username} has no songs.</h3>
         </div>;
       }
-    // if (this.props.songs.length > 0) {
-    //   songListHeader = <h2>Your Tracks</h2>;
-    //   }
+      if (user.id === currentUser.id) {
+              editProfPicButton =
+              <label htmlFor='prof-upload'>
+                Update Photo
+                <input type="file"
+                  onChange={this.setProfilePic}
+                  id='prof-upload'
+                  style={{'display': 'none'}}/>
+              </label>;
+
+              editCoverPicButton =
+              <label htmlFor='cover-upload'>
+                Update Cover Photo
+                <input type="file"
+                  onChange={this.setCoverPic}
+                  id='cover-upload'
+                  style={{'display': 'none'}}/>
+              </label>;
+            }
 
 
 
@@ -112,8 +128,10 @@ class UserShowPage extends React.Component {
             <br />
             <h2>Tracks</h2>
               <br />
+              <ul className="users-songs">
+                {songList}
+              </ul>
 
-            {songList}
           </div>
         </div>
 
