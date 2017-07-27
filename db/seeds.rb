@@ -186,7 +186,7 @@ s15 = Song.create!({
 })
 
 s16 = Song.create!({
-  title: "She Knows",
+  title: "A Place Like This",
   user_id: u7.id,
   image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/place_likethis.jpeg"),
   track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/Majid+Jordan+A+Place+Like+This+Official+Video.mp3")

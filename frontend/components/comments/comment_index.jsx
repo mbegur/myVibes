@@ -13,7 +13,7 @@ class CommentIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setBody = this.setBody.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    // this.renderTrash = this.renderTrash.bind(this);
+    this.renderTrash = this.renderTrash.bind(this);
   }
 
   componentDidMount(){
@@ -51,18 +51,18 @@ class CommentIndex extends React.Component {
     }
 
   }
-  //
-  // renderTrash(userId, commentId) {
-  //   const { currentUser } = this.props;
-  //   let trash;
-  //   if (currentUser) {
-  //     if (currentUser.id === userId) {
-  //       trash = <i onClick={()=>this.props.deleteComment(commentId)}
-  //         className="fa fa-times" aria-hidden="true"></i>;
-  //       }
-  //     }
-  //     return trash;
-  //   }
+  
+  renderTrash(userId, commentId) {
+    const { currentUser } = this.props;
+    let trash;
+    if (currentUser) {
+      if (currentUser.id === userId) {
+        trash = <i onClick={()=>this.props.deleteComment(commentId)}
+          className="fa fa-times" aria-hidden="true"></i>;
+        }
+      }
+      return trash;
+    }
 
 
   render(){
@@ -94,6 +94,7 @@ class CommentIndex extends React.Component {
 
       </div>;
     }
+
 
     return(
       <div className="comment-form-container">
