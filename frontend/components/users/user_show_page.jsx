@@ -65,7 +65,7 @@ class UserShowPage extends React.Component {
     //   songListHeader = <h2>Your Tracks</h2>;
     //   }
 
-      if (user.id === currentUser.id) {
+      if (currentUser && user.id === currentUser.id) {
             editProfPicButton =
             <label htmlFor='prof-upload'>
               Update Photo
