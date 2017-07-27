@@ -5,6 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       body: ''
     };
@@ -69,21 +70,20 @@ class CommentIndex extends React.Component {
     let trash;
 
     let allComments = comments.map((comment, idx) => {
-      return <li className='comment-item' key={idx}>
-              <div>
+      return <li className='new-comment-item' key={idx}>
+              <div className="user-comment-info">
                 <Link to={`/user/${comment.user_id}`}>
-                  <h4>{currentUser.image_file_name}</h4>
+                  <img className="new-comment-user-image" height="50" width="50" src={currentUser.profile_pic_url}></img>
                 </Link>
-                <div>
-                  <Link to={`/user/${comment.user_id}`}>
+                <div className="user-comment-info-sub">
+                  <Link className="comment-username-link" to={`/user/${comment.user_id}`}>
                     {comment.user_username}
                   </Link>
-                  
-                  {comment.body}
+                  <div>{comment.body}</div>
                 </div>
               </div>
 
-              <div className='comment-info'>
+              <div className='new-comment-info'>
                 <br/>
               <span>{comment.time} ago&nbsp;</span>
               </div>
@@ -98,7 +98,7 @@ class CommentIndex extends React.Component {
     return(
       <div className="comment-form-container">
         {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
+        <form className="new-comment-form" onSubmit={this.handleSubmit}>
           <input className="comment-input"
             value={this.state.body}
             onChange={this.setBody}
