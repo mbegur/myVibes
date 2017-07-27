@@ -84,16 +84,18 @@ class SongForm extends React.Component {
   render(){
     return(
       <div className="overall-upload-form">
+        <h1 className="upload-header">Upload a Song</h1>
+        <br /><br />
         {this.renderErrors()}
         <form className="upload-form-box">
-          <div className="form">
-            {this.state.image_url.length > 0 ? <img height="150" width="150" src={this.state.image_url}
+          <div className="upload-photo-form">
+            {this.state.image_url.length > 0 ? <img height="200" width="200" src={this.state.image_url}
                alt="album-art" /> : <div></div>}
             <br />
             <p>Choose Cover Photo</p>
             <input className="auth-input" type="file" onChange={this.setImage}/>
           </div>
-          <div className='song-form-right'>
+          <div className='upload-form-right'>
             <input
                   type="text"
                   value={this.state.title}
@@ -104,14 +106,14 @@ class SongForm extends React.Component {
             <textarea placeholder="Description"
               value={this.state.description}
               onChange={this.update('description')}
-              cols="60" rows="3"
+              cols="50" rows="3"
               className="auth-input"></textarea>
 
             <p>Choose Song</p>
-              <input className="auth-input" type="file" onChange={this.setTrack}/>
-
-            <button className="form-buts" onClick={this.handleSubmit}>Upload</button>
+              <input className="upload-input" type="file" onChange={this.setTrack}/>
+              <button className="upload-form-but" onClick={this.handleSubmit}>Upload</button>
           </div>
+
         </form>
       </div>
     );

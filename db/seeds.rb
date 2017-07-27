@@ -98,7 +98,7 @@ s3 = Song.create!({
   title: "We Belong Together",
   user_id: u1.id,
   image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/3b1400674a0257ceef8198a8a335b3f8.1000x1000x1.jpg"),
-  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/letmeloveyou.mp3")
+  track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/mariah-carey-we-belong-together.mp3")
 })
 
 s4 = Song.create!({

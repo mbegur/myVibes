@@ -1,0 +1,52 @@
+.overall-upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.upload-header {
+  margin-top: -10px;
+}
+
+.upload-form-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // align-items: center;
+}
+
+.upload-form-box {
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-end;
+
+}
+
+.upload-photo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.upload-input {
+
+}
+
+.upload-form-but {
+  text-align: center;
+  width: 200px;
+  height: 10%;
+  // border: 2px solid black;
+  background-color: #3CB371;
+  margin-left: 25%;
+  margin-top: 5%;
+  color: white;
+}
+
+.upload-form-but:hover {
+  opacity: .8;
+}
