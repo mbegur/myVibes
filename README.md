@@ -31,13 +31,13 @@ User's passwords are stored in the database as a salted hash using BCrypt. Salti
 Create songs instantly from any page no matter where it was you were inspired. Easily update existing songs if you make any mistakes. Music can be edited from the song show page if it is your song.
 
 
-![playlist_create](/docs/images/playlist_create.gif)
+![song_create](/app/assets/images/uploadpic.png) ![song_edit](/app/assets/images/editpic.png)
 
 ### Song Comments
 
 Comment on all your favorite songs.
 
-![comment](/docs/images/comments.gif)
+![comment](/app/assets/images/comments.gif)
 
 ## Future
 
