@@ -31,7 +31,14 @@ User's passwords are stored in the database as a salted hash using BCrypt. Salti
 Create songs instantly from any page no matter where it was you were inspired. Easily update existing songs if you make any mistakes. Music can be edited from the song show page if it is your song.
 
 
-![song_create](/app/assets/images/uploadpic.png) ![song_edit](/app/assets/images/editpic.png)
+![song_create](/app/assets/images/uploadpic.png)
+
+### Continuous Music Playback
+
+The music player shows up immediately on playing a song, and retains whatever the next song to play was at that moment. This means that until the user actually tries to play a new set of songs the next and back buttons will navigate through the queue that they initially clicked on, the same as on Google Music or Spotify.
+
+![song_create](/app/assets/images/continuousplay.gif)
+
 
 ### Song Comments
 
