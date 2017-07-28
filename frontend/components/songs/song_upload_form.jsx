@@ -9,7 +9,7 @@ class SongForm extends React.Component {
       title: this.props.song.title || "",
       description: this.props.song.description || "",
       image: '',
-      image_url: this.props.song.image_url || 'http://res.cloudinary.com/mbegur/image/upload/v1501176247/musicfile-512_ek2s9d.png',
+      image_url: this.props.song.image_url || 'https://res.cloudinary.com/mbegur/image/upload/v1501176247/musicfile-512_ek2s9d.png',
       track: "",
       user_id: this.props.id};
     // if (this.props.song.title) {
