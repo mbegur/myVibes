@@ -1,24 +1,25 @@
-# README
+# myVibes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[myVibes](https://myvibessoundcloud.herokuapp.com/) is a full stack web application built on a React/Redux frontend and a Ruby on Rails backend. Partially inspired by SoundCloud, SoundCloud lets users create, play, update, and delete their favorite songs and browse for new music all while continuously playing music while navigating the site.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Robust front-end and back-end authentication
+- Create, update, and delete songs
+- Browse for music and have continuous playing music between pages
+- Customizable user pages, including profile and cover photos
+- Comments on all songs
 
-* System dependencies
+### Technologies
+- Ruby on Rails
+- React.js
+- Redux
+- PostgreSQL
+- AWS
+- jQuery
+- SASS
+### Authentication
 
-* Configuration
+User's passwords are stored in the database as a salted hash using BCrypt. Salting a password prepends a random string the password so even users with duplicate passwords will not have the same hash stored in the backend.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![login_flow](https://res.cloudinary.com/mbegur/image/upload/v1501263773/auth_frdjxa.gif)
