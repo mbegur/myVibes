@@ -70,7 +70,7 @@ class SongUploadModal extends React.Component {
                              user={this.props.id} />
 
         </Modal></div> : <div>
-        <button className="auth-buts" onClick={this.openModal}>Edit Your Song</button>
+        <button className="edit-but" onClick={this.openModal}>Edit</button>
           <Modal
           isOpen={this.state.modalIsOpen}
 

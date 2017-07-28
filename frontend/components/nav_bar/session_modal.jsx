@@ -54,7 +54,7 @@ class SessionModal extends React.Component {
     let formType;
     return (
       <div>
-        {this.props.formType === "signup" ? <div>
+        {this.props.formType === "signup" ? <div className="splash-create-account">
           <button className="auth-buts" onClick={this.openModal}>Create Account</button>
           <Modal
           isOpen={this.state.modalIsOpen}

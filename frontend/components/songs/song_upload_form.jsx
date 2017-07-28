@@ -106,12 +106,16 @@ class SongForm extends React.Component {
   }
 
   render(){
-
-
+    let header;
+    if (this.props.type === "upload") {
+      header = "Upload a Song";
+    } else {
+      header = "Edit Song";
+    }
     return(
       <div className="overall-upload-form">
-        <h1 className="upload-header">Upload a Song</h1>
-        <br /><br />
+        <h1 className="upload-header">{header}</h1>
+        <br />
         {this.renderErrors()}
         <form className="upload-form-box">
           <div className="upload-photo-form">

@@ -50,7 +50,7 @@ class SongDetail extends React.Component {
     if (currentUser && currentUser.id === song.user_id) {
       deleteButton = <button
         className='delete-button'
-        onClick={this.handleDelete}>Delete Song</button>;
+        onClick={this.handleDelete}>Delete</button>;
     }
 
     if (currentUser && currentUser.id === song.user_id) {
@@ -72,7 +72,7 @@ class SongDetail extends React.Component {
               </button>
               <div>
                 <div className='song-detail-title'>{song.title}</div>
-                <div className='song-detail-username'>{song.user.username}</div>
+                <div className='song-detail-username'><Link to={`/users/${song.user_id}`}>{song.user.username}</Link></div>
 
                 { deleteButton }
                 { editButton }

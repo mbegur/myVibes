@@ -116,16 +116,24 @@ body, div, nav, h2, h1, h3, button, html, p {
 .welcome-text h3 {
   font-size: 40px;
   // margin-bottom: 180px;
-  text-shadow: 2px 2px gray;
+  // text-shadow: 2px 2px gray;
 }
 .welcome-text p {
   // margin-bottom: 100px;
   font-size: 18px;
   text-align: center;
-  text-shadow: 2px 2px gray;
+  // text-shadow: 2px 2px gray;
 }
 
 .welcome-text button {
   margin-top: 25px;
-  background-color: #3CB371;
+  background-color: #38bf44
+;
+}
+
+.welcome-text button:hover {
+  opacity:0.7;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  color: white;
 }

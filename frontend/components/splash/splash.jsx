@@ -22,7 +22,7 @@ class Splash extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="overall-splash">
       <div className="hero-image">
         {this.props.currentUser ?
           <div className="if-user-logged-in">
@@ -60,7 +60,10 @@ class Splash extends React.Component {
         <div className="welcome-text">
           <h3>Connect on myVibes</h3>
           <p>Explore, stream, and enjoy your favorite music <br/>from emerging and major artists</p>
-          <SessionModal formType={"signup"}/>
+          <div className="splash-create-account-new">
+            <SessionModal formType={"signup"}/>
+          </div>
+
         </div>
 
 

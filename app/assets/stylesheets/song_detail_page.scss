@@ -29,7 +29,7 @@
   // justify-content: space-between;
   // border: solid 2px black;
   align-self: center;
-  background-color: white;
+  background-color: #f2f2f2;
   align-items: center;
   min-height: 100vh;
 
@@ -100,8 +100,12 @@
 
 .song-detail-username {
   font-size: 18px;
-
 }
+
+.song-detail-username:hover {
+  color: #3CB371;
+}
+
 .delete-button {
   margin-top: 0;
 }
@@ -148,4 +152,9 @@
 }
 .comment-username-link:hover {
   color: #3CB371;
+}
+
+.edit-but {
+  background-color: gray;
+  padding: 5px;
 }
