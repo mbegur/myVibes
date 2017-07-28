@@ -22,4 +22,4 @@
 
 User's passwords are stored in the database as a salted hash using BCrypt. Salting a password prepends a random string the password so even users with duplicate passwords will not have the same hash stored in the backend.
 
-![login_flow](https://res.cloudinary.com/mbegur/image/upload/v1501263773/auth_frdjxa.gif)
+![login_flow](/app/assets/images/auth.gif)
