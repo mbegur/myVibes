@@ -82,6 +82,8 @@ class SongForm extends React.Component {
       this.props.createSong(formData)
       .then(data => {
         this.props.history.push(`/songs/${data.song.id}`);
+      }).then(() => {
+        this.props.closeModal();
       });
     } else {
       this.props.updateSong(this.props.song.id, formData)
