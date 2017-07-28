@@ -67,12 +67,17 @@ class CommentIndex extends React.Component {
   render(){
     const { comments, errors, currentUser } = this.props;
     let trash;
-
+    let profPic;
+    if (!currentUser) {
+      return null;
+    } else {
+      profPic = currentUser.profile_pic_url;
+    }
     let allComments = comments.map((comment, idx) => {
       return <li className='new-comment-item' key={idx}>
               <div className="user-comment-info">
                 <Link to={`/user/${comment.user_id}`}>
-                  <img className="new-comment-user-image" height="50" width="50" src={currentUser.profile_pic_url}></img>
+                  <img className="new-comment-user-image" height="50" width="50" src={profPic}></img>
                 </Link>
                 <div className="user-comment-info-sub">
                   <Link className="comment-username-link" to={`/user/${comment.user_id}`}>
