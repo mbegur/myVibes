@@ -18,8 +18,37 @@
 - AWS
 - jQuery
 - SASS
+
 ### Authentication
 
 User's passwords are stored in the database as a salted hash using BCrypt. Salting a password prepends a random string the password so even users with duplicate passwords will not have the same hash stored in the backend.
 
 ![login_flow](/app/assets/images/auth.gif)
+
+
+### Song CRUD
+
+Create songs instantly from any page no matter where it was you were inspired. Easily update existing songs if you make any mistakes. Music can be edited from the song show page if it is your song.
+
+
+![playlist_create](/docs/images/playlist_create.gif)
+
+### Song Comments
+
+Comment on all your favorite songs.
+
+![comment](/docs/images/comments.gif)
+
+## Future
+
+#### Search
+
+I plan to add a search-bar component to the nav-bar at the header that allows users to search for a user or song that person is looking for.
+
+#### Likes
+
+To make the user experience more friendly, I plan to add the option to like a song. This way a user can easily view songs they like on their user show page.
+
+#### Playlists
+
+Currently when you click a song, a random song will play after the song is completed or skipped that is pulled from my database of songs. I plan to have a user be able to create a playlist that works similarly to a queue. It will have easy accessibility on the user's show page.
