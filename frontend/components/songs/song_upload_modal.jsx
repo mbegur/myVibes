@@ -65,7 +65,7 @@ class SongUploadModal extends React.Component {
           contentLabel="Session Modal">
 
           <SongUploadFormContainer type={this.props.type}
-                             song={this.props.song}
+                             song={this.props.song || {}}
                              closeModal={this.closeModal}
                              user={this.props.id} />
 

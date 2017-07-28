@@ -54,7 +54,7 @@ class SongDetail extends React.Component {
     }
 
     if (currentUser && currentUser.id === song.user_id) {
-      editButton = <SongUploadModal clearSongErrors={this.props.clearSongErrors}
+      editButton = <SongUploadModal song={song} clearSongErrors={this.props.clearSongErrors}
     user={this.props.currentUser.id}
     type="edit"/>;
     }

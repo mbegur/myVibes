@@ -29,7 +29,7 @@ class SongIndexItem extends React.Component {
           <div className='overall-splash-container'>
             <div className="new-song-index-item">
               <div className="container">
-                <Link to={`/songs/${song.id}`}>
+                <Link href="#" to={`/songs/${song.id}`}>
                   <img className="splash-index-image" src={song.image_file_name} alt="cover-photo" />
                 </Link>
                 <div className='middle'>

@@ -6,15 +6,17 @@ class SongForm extends React.Component {
     super(props);
 
     this.state = {
-      title: '',
-      description: '',
+      title: this.props.song.title || "",
+      description: this.props.song.description || "",
       image: '',
-      image_url: 'http://res.cloudinary.com/mbegur/image/upload/v1501176247/musicfile-512_ek2s9d.png',
-      track: '',
+      image_url: this.props.song.image_url || 'http://res.cloudinary.com/mbegur/image/upload/v1501176247/musicfile-512_ek2s9d.png',
+      track: "",
       user_id: this.props.id};
-    if (this.props.song) {
-      this.state = this.props.song;
-    }
+    // if (this.props.song.title) {
+    //   this.state = this.props.song;
+    // }
+
+
     this.update = this.update.bind(this);
     this.setImage = this.setImage.bind(this);
     this.setTrack = this.setTrack.bind(this);
@@ -76,27 +78,27 @@ class SongForm extends React.Component {
     //   formData.append("song[track]", this.state.track);
     // }
 
-    // if (this.props.type === "upload") {
-    //   this.props.createSong(formData)
-    //   .then(data => {
-    //     this.props.history.push(`/song/${data.song.id}`);
-    //   });
-    // } else {
-    //   this.props.updateSong(this.state.id, formData)
-    //   .then(data => {
-    //     this.props.history.push(`/song/${data.song.id}`);
-    //   }).then(() => {
-    //     this.props.closeModal();
-    //   });
-    // }
+    if (this.props.type === "upload") {
+      console.log("create");
+      this.props.createSong(formData)
+      .then(data => {
+        this.props.history.push(`/songs/${data.song.id}`);
+      });
+    } else {
+      console.log("update");
+      this.props.updateSong(this.props.song.id, formData)
+      .then(() => {
+        this.props.closeModal();
+      });
+    }
 
     // .then(() => {
     //   this.props.closeModal();
     // })
 
-      this.props.createSong(formData).then(data => {
-        this.props.history.push(`/songs/${data.song.id}`);
-      });
+      // this.props.createSong(formData).then(data => {
+      //   this.props.history.push(`/songs/${data.song.id}`);
+      // });
       // .then(() => {
       //   this.props.closeModal();
       // });

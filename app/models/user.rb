@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :comments
 
-  has_attached_file :image, presence: true, default_url: "https://res.cloudinary.com/mbegur/image/upload/v1501021034/defaultIcon_wjuhds.png", url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'myvibes'
+  has_attached_file :image, presence: true, default_url: "http://newcodecamp.com/Images/UserProfile.png", url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'myvibes'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 3.megabytes
 

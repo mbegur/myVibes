@@ -32,6 +32,9 @@ const SongReducer = (state = defaultState, action) => {
     case REMOVE_SONG:
       newState = Object.assign({}, state);
       delete newState.songs[action.id];
+      if (newState.currentSong === action.id) {
+        return merge({}, newState, {currentSong: null});
+      }
       return newState;
     case CLEAR_ERRORS:
       const newErrors = [];

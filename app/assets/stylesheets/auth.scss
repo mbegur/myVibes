@@ -35,8 +35,13 @@ body, div, nav, h2, h1, h3, button, html, p {
 /* The hero image */
 .hero-image {
     /* The image used */
-    background-image: url("https://res.cloudinary.com/mbegur/image/upload/v1500514196/splash_image_darker_sawsue.jpg");
-
+    // background-image: url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://res.cloudinary.com/mbegur/image/upload/v1501198205/hero-new_tflzya.png");
     /* Set a specific height */
     height: 500px;
 
