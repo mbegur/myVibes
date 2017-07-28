@@ -5,7 +5,6 @@ import { Link, withRouter } from 'react-router-dom';
 class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       body: ''
     };
@@ -51,7 +50,7 @@ class CommentIndex extends React.Component {
     }
 
   }
-  
+
   renderTrash(userId, commentId) {
     const { currentUser } = this.props;
     let trash;

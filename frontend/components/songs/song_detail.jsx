@@ -70,12 +70,13 @@ class SongDetail extends React.Component {
               <button className="play-button" onClick={this.playTheSong(song)}>
                 <img src="https://res.cloudinary.com/mbegur/image/upload/v1500930685/noun_959858_cc_mwikpw.svg" alt="Play_Button" height="55" width="55"></img>
               </button>
-              <div>
+              <div className='deets'>
                 <div className='song-detail-title'>{song.title}</div>
                 <div className='song-detail-username'><Link to={`/users/${song.user_id}`}>{song.user.username}</Link></div>
-
-                { deleteButton }
-                { editButton }
+                <div className ='song-buttons'>
+                  { deleteButton } &nbsp;&nbsp;
+                  { editButton }
+                </div>
                 <div className='song-detail-description'>{song.description}</div>
               </div>
 

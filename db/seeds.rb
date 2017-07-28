@@ -75,7 +75,7 @@ u9 = User.create!(
 u10 = User.create!({
     username: "ChanceTheRapper",
     password: "password",
-    image: open("https://s3-us-west-1.amazonaws.com/myvibes/profile_pic_seeds/profilepic/img-chance-the-rapper_155057831397.jpg"),
+    image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/98.png"),
     coverpic: open("https://s3-us-west-1.amazonaws.com/myvibes/cover_pic_seeds/coverpic/download.jpeg")
     });
 
@@ -90,7 +90,7 @@ s1 = Song.create!({
 s2 = Song.create!({
   title: "Blessings",
   user_id: u10.id,
-  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/GQ-Grammys-Pari-Dukovic-Chance-the-Rapper.jpg"),
+  image: open("https://s3-us-west-1.amazonaws.com/myvibes/song_pic_seeds/songpic/chance-the-rapper-art.jpg"),
   track: open("https://s3-us-west-1.amazonaws.com/myvibes/song_seeds/song/05+-+Blessings.mp3")
 })
 

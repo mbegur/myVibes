@@ -6,7 +6,6 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 class UserShowPage extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(this.props);
 
     this.setProfilePic = this.setProfilePic.bind(this);
     this.setCoverPic = this.setCoverPic.bind(this);
@@ -41,7 +40,6 @@ class UserShowPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { user, currentUser, songs, receiveSingleSong } = this.props;
     let songList;
     let songListHeader;
@@ -64,7 +62,7 @@ class UserShowPage extends React.Component {
       if (currentUser && user.id === currentUser.id) {
               editProfPicButton =
               <label htmlFor='prof-upload'>
-                Update Photo
+                &nbsp;<img src="https://res.cloudinary.com/mbegur/image/upload/v1501222402/photo-camera_ybj7nk.png" />&nbsp;Update Photo
                 <input type="file"
                   onChange={this.setProfilePic}
                   id='prof-upload'
@@ -73,7 +71,8 @@ class UserShowPage extends React.Component {
 
               editCoverPicButton =
               <label htmlFor='cover-upload'>
-                Update Cover Photo
+                &nbsp;<img src="https://res.cloudinary.com/mbegur/image/upload/v1501222402/photo-camera_ybj7nk.png" />&nbsp;Update Cover Photo
+
                 <input type="file"
                   onChange={this.setCoverPic}
                   id='cover-upload'

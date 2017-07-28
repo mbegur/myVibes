@@ -79,13 +79,11 @@ class SongForm extends React.Component {
     // }
 
     if (this.props.type === "upload") {
-      console.log("create");
       this.props.createSong(formData)
       .then(data => {
         this.props.history.push(`/songs/${data.song.id}`);
       });
     } else {
-      console.log("update");
       this.props.updateSong(this.props.song.id, formData)
       .then(() => {
         this.props.closeModal();

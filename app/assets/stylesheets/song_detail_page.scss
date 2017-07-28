@@ -9,8 +9,8 @@
 }
 
 .song-detail-page {
-  // background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
-  background-color: #B9EDD9;
+  background-image: url('http://res.cloudinary.com/mbegur/image/upload/v1500931361/507865214_zfqjwg.jpg');
+  // background-color: #B9EDD9;
   display: flex;
   // flex-direction: row;
   width: 80%;
@@ -157,4 +157,15 @@
 .edit-but {
   background-color: gray;
   padding: 5px;
+}
+
+.song-buttons {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+  // justify-content: space-around;
+}
+//
+.deets {
+  margin-left: 15px;
 }
