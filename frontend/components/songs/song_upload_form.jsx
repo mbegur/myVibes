@@ -105,10 +105,13 @@ class SongForm extends React.Component {
 
   render(){
     let header;
+    let submit;
     if (this.props.type === "upload") {
       header = "Upload a Song";
+      submit = "Upload";
     } else {
       header = "Edit Song";
+      submit = "Edit";
     }
     return(
       <div className="overall-upload-form">
@@ -139,7 +142,7 @@ class SongForm extends React.Component {
 
             <p>Choose Song</p>
               <input className="upload-input" type="file" onChange={this.setTrack}/>
-              <button className="upload-form-but" onClick={this.handleSubmit}>Upload</button>
+              <button className="upload-form-but" onClick={this.handleSubmit}>{submit}</button>
           </div>
 
         </form>

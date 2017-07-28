@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { requestAllSongs, requestSingleSong, clearErrors, receiveSingleSong } from '../../actions/song_actions';
-import { playSong } from '../../actions/audio_player_actions';
 import SongIndex from './song_index';
 import { selectAllSongs } from '../../reducers/selectors';
 
