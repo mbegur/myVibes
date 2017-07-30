@@ -1,6 +1,6 @@
 # myVibes
 
-[myVibes](https://myvibessoundcloud.herokuapp.com/) is a full stack web application built on a React/Redux frontend and a Ruby on Rails backend. Partially inspired by SoundCloud, SoundCloud lets users create, play, update, and delete their favorite songs and browse for new music all while continuously playing music while navigating the site.
+[myVibes](https://myvibessoundcloud.herokuapp.com/) is a full stack web application built on a React/Redux frontend and a Ruby on Rails backend. Partially inspired by SoundCloud, myVibes lets users create, play, update, and delete their favorite songs and browse for new music all while continuously playing music while navigating the site.
 
 ## Features
 
