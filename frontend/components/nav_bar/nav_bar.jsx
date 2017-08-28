@@ -20,7 +20,7 @@ class NavBar extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.input !== this.props.input) {
-      this.props.historyo.push('/search');
+      this.props.history.push('/search');
     }
 
     if (nextProps.input === "" && this.props.input !== "") {
@@ -42,6 +42,7 @@ class NavBar extends React.Component {
   setSearch(e) {
     const search = e.target.value ? e.target.value : "";
     this.setState({ input: search });
+    setTimeout(() => this.props.receiveSearch(this.state.input), 0);
   }
 
   render() {

@@ -18,10 +18,11 @@ class SongIndex extends React.Component {
   songsSearched() {
     let searchedSongs = [];
     for (var i = 0; i < this.props.songs.length; i++) {
-      let song = this.props.songs[i].toLowerCase();
-      let user = this.props.songs[i].user.username.toLowerCase();
-      let search = this.props.input.toLowerCase();
+      let song = this.props.songs[i].title.toString().toLowerCase();
+      let user = this.props.songs[i].user.username.toString().toLowerCase();
+      let search = this.props.input.toString().toLowerCase();
       if (song.includes(search) || user.includes(search)) {
+
         searchedSongs.push(this.props.songs[i]);
       }
     }
