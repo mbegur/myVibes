@@ -6,16 +6,28 @@ import SongUploadModal from '../songs/song_upload_modal';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      input: ""
+    };
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.logOutUser = this.logOutUser.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.match.params.userId !== nextProps.match.params.userId) {
-  //       this.props.requestSingleUser(nextProps.match.params.userId);
-  //     }
-  // }
-  //
+  componentDidMount() {
+    this.props.requestAllSongs();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.input !== this.props.input) {
+      this.props.historyo.push('/search');
+    }
+
+    if (nextProps.input === "" && this.props.input !== "") {
+      this.props.history.goBack();
+    }
+  }
+
+
   handleDemoLogin(e) {
     e.preventDefault();
     this.props.login({user: {username: "guestuser", password: "password"}}).then(() => this.props.history.push("/songs"));
@@ -24,6 +36,11 @@ class NavBar extends React.Component {
   logOutUser(e) {
     e.preventDefault();
     this.props.logout().then(() => this.props.history.push("/"));
+  }
+
+  setSearch(e) {
+    const search = e.target.value ? e.target.value : "";
+    this.setState({ search });
   }
 
   render() {
@@ -37,7 +54,9 @@ class NavBar extends React.Component {
                 <button className='logo-buts'><h1>myVibes</h1></button>
               </Link>
             </div>
-
+            <div className="search-bar">
+              <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
+            </div>
             <div className="auth-buttons">
               <Link to={`/users/${this.props.currentUser.id}`}>
                 <img height="35" width="35" src={this.props.currentUser.profile_pic_url}></img>
@@ -59,6 +78,10 @@ class NavBar extends React.Component {
             <Link to='/'>
               <button className='logo-buts'><h1>myVibes</h1></button>
             </Link>
+          </div>
+
+          <div className="search-bar">
+            <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
           </div>
           <div className="auth-buttons">
 

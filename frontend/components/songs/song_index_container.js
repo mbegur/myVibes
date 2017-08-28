@@ -6,7 +6,7 @@ import { selectAllSongs } from '../../reducers/selectors';
 const mapStateToProps = state => ({
   songs: selectAllSongs(state),
   errors: state.songs.errors,
-
+  input: state.search.input
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -21,6 +21,7 @@ const App = () => (
         <Route path="/songs/:songId" component={ SongDetailContainer }  />
         <Route path="/users/:userId" component={ UserContainer }  />
         <Route path="/songs" component={ SongIndexContainer }  />
+        <Route path="/search" render={() => <SongIndexContainer search ={true}/>} />
         <AuthRoute path="/" component={ SplashContainer }  />
       </Switch>
     </div>
