@@ -5,14 +5,34 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class SongIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.songsSearched = this.songsSearched.bind(this);
+
+  }
+
   componentDidMount(){
     this.props.requestAllSongs();
+  }
+
+  songsSearched() {
+    let searchedSongs = [];
+    for (var i = 0; i < this.props.songs.length; i++) {
+      let song = this.props.songs[i].toLowerCase();
+      let user = this.props.songs[i].user.username.toLowerCase();
+      let search = this.props.input.toLowerCase();
+      if (song.includes(search) || user.includes(search)) {
+        searchedSongs.push(this.props.songs[i]);
+      }
+    }
+
+    return searchedSongs;
   }
 
   render() {
     const { songs, receiveSingleSong, playSong } = this.props;
     const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
-    //
+
     return (
       <div className="new-overall-index-page">
         <header>
