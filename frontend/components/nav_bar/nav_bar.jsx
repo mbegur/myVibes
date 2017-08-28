@@ -11,6 +11,7 @@ class NavBar extends React.Component {
     };
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.logOutUser = this.logOutUser.bind(this);
+    this.setSearch = this.setSearch.bind(this);
   }
 
   componentDidMount() {
@@ -40,7 +41,7 @@ class NavBar extends React.Component {
 
   setSearch(e) {
     const search = e.target.value ? e.target.value : "";
-    this.setState({ search });
+    this.setState({ input: search });
   }
 
   render() {
