@@ -8,6 +8,20 @@ class SearchBar extends React.Component {
       searchParams: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.pageClick = this.pageClick.bind(this);
+    this.clearField = this.clearField.bind(this);
+  }
+
+  pageClick(e) {
+    // e.preventDefault;
+    this.setState({
+      searchParams: ""
+    });
+  }
+
+  clearField(e) {
+    e.currentTarget.value = "";
+    setTimeout(this.pageClick, 100);
   }
 
   handleSubmit(e) {
@@ -32,7 +46,10 @@ class SearchBar extends React.Component {
         }
       });
     }
-    if (songsSearched) {
+    if (this.state.searchParams === "") {
+      return [];
+    }
+    if (songsSearched && this.state.searchParams !== "") {
       let mappedResults = songsSearched.slice(0,10).map((song, idx) => {
         return ( <li onClick={() => {
           this.setState({searchParams: ""});
@@ -69,8 +86,14 @@ class SearchBar extends React.Component {
         <div className="search-container">
           <div className="outer">
             <div className="search-bar">
-              <input type="text" placeholder="Search" className="search-form"
-                onChange={this.update('searchParams')} value={this.searchParams}></input>
+              <input
+                type="text"
+                placeholder="Search"
+                className="search-form"
+                onChange={this.update('searchParams')}
+                value={this.searchParams}
+                onBlur={this.clearField}>
+              </input>
             </div>
           </div>
           <div>
