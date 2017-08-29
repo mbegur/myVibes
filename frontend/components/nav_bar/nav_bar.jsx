@@ -12,6 +12,7 @@ class NavBar extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.logOutUser = this.logOutUser.bind(this);
     this.setSearch = this.setSearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
@@ -45,6 +46,13 @@ class NavBar extends React.Component {
     setTimeout(() => this.props.receiveSearch(this.state.input), 0);
   }
 
+  clearSearch(e) {
+    this.props.receiveSearch("");
+    this.setState({
+      input: ""
+    });
+  }
+
   render() {
     return(
       <div className="overall-nav-bar">
@@ -52,7 +60,7 @@ class NavBar extends React.Component {
           <div className="if-user-logged-in">
 
             <div className="header">
-              <Link to='/songs'>
+              <Link to='/songs' onClick={this.clearSearch}>
                 <button className='logo-buts'><h1>myVibes</h1></button>
               </Link>
             </div>

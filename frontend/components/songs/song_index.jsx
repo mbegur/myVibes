@@ -33,10 +33,13 @@ class SongIndex extends React.Component {
   render() {
     const { songs, receiveSingleSong, playSong } = this.props;
     let allSongs;
+    let header;
     if (this.props.input) {
       let searched = this.songsSearched();
       allSongs = searched.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
+      header = 'Search Results';
     } else {
+      header = 'Stream';
       allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
     }
 
@@ -46,7 +49,7 @@ class SongIndex extends React.Component {
           <NavBarContainer />
         </header>
         <div className="new-song-index-page">
-          <h1>Stream</h1>
+          <h1>{ header }</h1>
           <ul className="new-song-index-list">
             { allSongs }
           </ul>
