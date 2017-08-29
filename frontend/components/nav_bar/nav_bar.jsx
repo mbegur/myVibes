@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SessionModal from './session_modal';
 import SongUploadModal from '../songs/song_upload_modal';
+import SearchContainer from '../search/search_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class NavBar extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.input !== this.props.input) {
       this.props.history.push('/search');
+    }
+
+    if (nextProps.input === this.props.input) {
+      this.clearSearch();
     }
 
     if (nextProps.input === "" && this.props.input !== "") {
@@ -64,9 +69,7 @@ class NavBar extends React.Component {
                 <button className='logo-buts'><h1>myVibes</h1></button>
               </Link>
             </div>
-            <div className="search-bar">
-              <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
-            </div>
+            <SearchContainer/>
             <div className="auth-buttons">
               <Link to={`/users/${this.props.currentUser.id}`}>
                 <img height="35" width="35" src={this.props.currentUser.profile_pic_url}></img>
@@ -89,6 +92,7 @@ class NavBar extends React.Component {
               <button className='logo-buts'><h1>myVibes</h1></button>
             </Link>
           </div>
+          <SearchContainer/>
 
           <div className="search-bar">
             <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
@@ -125,8 +129,6 @@ class NavBar extends React.Component {
 
 export default withRouter(NavBar);
 
-// <div className="welcome-text">
-//   <h3>Connect on myVibes</h3>
-//   <p>Explore, stream, and enjoy your favorite music <br/>from emerging and major artists</p>
-//   <SessionModal formType={"signup"}/>
+// <div className="search-bar">
+//   <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
 // </div>
