@@ -18,6 +18,7 @@ class SongIndex extends React.Component {
 
     const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
     const header = 'Stream';
+
       return (
         <div className="new-overall-index-page">
           <header>
@@ -31,23 +32,9 @@ class SongIndex extends React.Component {
           </div>
         </div>
       );
-    }
-
-    return (
-      <div className="new-overall-index-page">
-        <header>
-          <NavBarContainer />
-        </header>
-        <div className="new-song-index-page">
-          <h1>{ header }</h1>
-          <ul className="new-song-index-list">
-            { allSongs }
-          </ul>
-        </div>
-      </div>
 
 
-    );
+
   }
 }
 
