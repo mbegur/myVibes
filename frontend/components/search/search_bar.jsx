@@ -50,16 +50,24 @@ class SearchBar extends React.Component {
       return [];
     }
     if (songsSearched && this.state.searchParams !== "") {
-      let mappedResults = songsSearched.slice(0,10).map((song, idx) => {
-        return ( <li onClick={() => {
+      let mappedResults = songsSearched.slice(0,6).map((song, idx) => {
+        return (<Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
+          <li onClick={() => {
           this.setState({searchParams: ""});
           }} className="search-results" key={idx}>
-          <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
-            <img className="search-image" height='30' width='30'src={song.image_file_name} alt="search-photo" />
-          </Link>
-          <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}> { song.title }</Link>
-          { song.user.username }
-        </li>);
+            <div className='overall-search-item'>
+              <div className='search-image'>
+                <img className="search-image" height='40' width='40'src={song.image_file_name} alt="search-photo" />
+              </div>
+              <div className='search-info'>
+                <span>{ song.title }</span>
+                <span className='search-username'>{ song.user.username }</span>
+              </div>
+
+            </div>
+
+          </li>
+      </Link>);
       });
       return mappedResults;
     } else {
