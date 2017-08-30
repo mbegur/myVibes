@@ -78,12 +78,11 @@ body, div, nav, h2, h1, h3, button, html, p {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  align-items: center
-  // margin: 25px 0;
-  // outline: none;
+  align-items: center;
   img {
     border-radius: 50%;
     margin-right: -14px;
+    margin-top: 5px;
   }
   button {
     margin: 0 10px;

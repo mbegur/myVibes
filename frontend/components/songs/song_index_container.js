@@ -5,17 +5,14 @@ import { selectAllSongs } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   songs: selectAllSongs(state),
-  errors: state.songs.errors,
-  input: state.search.input
+  errors: state.songs.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestAllSongs: (user) => dispatch(requestAllSongs({ user })),
   requestSingleSong: (user) => dispatch(requestSingleSong({ user })),
   clearErrors: () => dispatch(clearErrors()),
-  receiveSingleSong: (song) => dispatch(receiveSingleSong(song)),
-  playSong: (song) => dispatch(playSong(song))
-  // receiveErrors: (err) => dispatch(receiveErrors(err))
+  receiveSingleSong: (song) => dispatch(receiveSingleSong(song))
 });
 
 export default connect(
