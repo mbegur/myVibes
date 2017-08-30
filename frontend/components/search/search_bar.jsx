@@ -55,17 +55,24 @@ class SearchBar extends React.Component {
           <li onClick={() => {
           this.setState({searchParams: ""});
           }} className="search-results" key={idx}>
+          <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
             <div className='overall-search-item'>
               <div className='search-image'>
+                <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
                 <img className="search-image" height='40' width='40'src={song.image_file_name} alt="search-photo" />
+                </Link>
               </div>
               <div className='search-info'>
+                <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
                 <span>{ song.title }</span>
+                </Link>
+                <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
                 <span className='search-username'>{ song.user.username }</span>
+                </Link>
               </div>
 
             </div>
-
+          </Link>
           </li>
       </Link>);
       });

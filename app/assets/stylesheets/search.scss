@@ -1,6 +1,8 @@
 .results {
   z-index: 1000;
   position: absolute;
+  min-width: 25vw;
+  max-width: 25vw;
 }
 
 .header-nav-bar {
@@ -12,7 +14,8 @@
 .search-container {
   z-index: 1000;
   position: relative;
-
+  min-width: 25vw;
+  max-width: 25vw;
 }
 
 .search-form {
@@ -23,6 +26,7 @@
   width: 25vw;
   border-radius: 5px;
   padding-left: 8px;
+
   // margin-left: 5px;
 }
 
@@ -32,7 +36,6 @@
   min-width: 25vw;
   max-width: 25vw;
   padding: 5px;
-
 }
 
 .search-results:hover {
@@ -42,14 +45,21 @@
 .overall-search-item {
   display: flex;
   flex-direction: row;
+  min-width: 25vw;
+  max-width: 25vw;
+  height: 100%;
 }
 
 .search-info {
   display: flex;
   flex-direction: column;
-  margin-left: 10px
+  margin-left: 10px;
+  min-width: 25vw;
+  max-width: 25vw;
 }
 
 .search-username {
   font-size: 11px;
+  min-width: 25vw;
+  max-width: 25vw;
 }
