@@ -7,24 +7,17 @@ class SongIndex extends React.Component {
 
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount(){
     this.props.requestAllSongs();
   }
 
-
-
-
-
   render() {
     const { songs, receiveSingleSong, playSong } = this.props;
-    let allSongs;
-    let header;
-    if (this.props.match && this.props.match.params.path === "/songs") {
-      allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
-      header = 'Stream';
+
+    const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} playSong={playSong} receiveSingleSong={receiveSingleSong}/>));
+    const header = 'Stream';
       return (
         <div className="new-overall-index-page">
           <header>
