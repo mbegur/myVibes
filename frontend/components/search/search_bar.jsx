@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
 
   clearField(e) {
     e.currentTarget.value = "";
-    setTimeout(this.pageClick, 100);
+    setTimeout(this.pageClick, 200);
   }
 
   handleSubmit(e) {
@@ -57,11 +57,14 @@ class SearchBar extends React.Component {
           }} className="search-results" key={idx}>
           <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
             <div className='overall-search-item'>
+              <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
               <div className='search-image'>
                 <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
                 <img className="search-image" height='40' width='40'src={song.image_file_name} alt="search-photo" />
                 </Link>
               </div>
+            </Link>
+              <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
               <div className='search-info'>
                 <Link to={`/songs/${song.id}`} onClick={this.handleSubmit}>
                 <span>{ song.title }</span>
@@ -70,7 +73,7 @@ class SearchBar extends React.Component {
                 <span className='search-username'>{ song.user.username }</span>
                 </Link>
               </div>
-
+            </Link>
             </div>
           </Link>
           </li>
