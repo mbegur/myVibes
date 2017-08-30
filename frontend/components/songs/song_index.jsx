@@ -7,7 +7,6 @@ class SongIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.songsSearched = this.songsSearched.bind(this);
 
   }
 
