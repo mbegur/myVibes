@@ -3,6 +3,11 @@
   position: absolute;
 }
 
+.header-nav-bar {
+  h1 {
+    margin: 0px;
+  }
+}
 .search-container {
   z-index: 1000;
   position: relative;
@@ -12,4 +17,10 @@
 .search-form {
   z-index: 1000;
   position: relative;
+  background-color: #e5e5e5;
+  height: 5vh;
+  width: 25vw;
+  border-radius: 5px;
+  padding-left: 8px;
+  // margin-left: 5px;
 }

@@ -12,27 +12,12 @@ class NavBar extends React.Component {
     };
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.logOutUser = this.logOutUser.bind(this);
-    this.setSearch = this.setSearch.bind(this);
-    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
     this.props.requestAllSongs();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.input !== this.props.input) {
-      this.props.history.push('/search');
-    }
-
-    if (nextProps.input === this.props.input) {
-      this.clearSearch();
-    }
-
-    if (nextProps.input === "" && this.props.input !== "") {
-      this.props.history.goBack();
-    }
-  }
 
 
   handleDemoLogin(e) {
@@ -45,18 +30,9 @@ class NavBar extends React.Component {
     this.props.logout().then(() => this.props.history.push("/"));
   }
 
-  setSearch(e) {
-    const search = e.target.value ? e.target.value : "";
-    this.setState({ input: search });
-    setTimeout(() => this.props.receiveSearch(this.state.input), 0);
-  }
 
-  clearSearch(e) {
-    this.props.receiveSearch("");
-    this.setState({
-      input: ""
-    });
-  }
+
+
 
   render() {
     return(
@@ -64,7 +40,7 @@ class NavBar extends React.Component {
         {this.props.currentUser ?
           <div className="if-user-logged-in">
 
-            <div className="header">
+            <div className="header-nav-bar">
               <Link to='/songs' onClick={this.clearSearch}>
                 <button className='logo-buts'><h1>myVibes</h1></button>
               </Link>
@@ -87,16 +63,13 @@ class NavBar extends React.Component {
 
           </div>
           : <div className="if-user-logged-out">
-          <div className="header">
+          <div className="header-nav-bar">
             <Link to='/'>
               <button className='logo-buts'><h1>myVibes</h1></button>
             </Link>
           </div>
           <SearchContainer/>
 
-          <div className="search-bar">
-            <input className="search-text" onChange={this.setSearch} placeholder="search" value={this.state.input}></input>
-          </div>
           <div className="auth-buttons">
 
               <button className="auth-buts" onClick={this.handleDemoLogin}>Demo Log In</button>

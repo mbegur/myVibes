@@ -6,12 +6,16 @@ body.homepage #page-header-wrapper {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
+  height: 10vh;
 }
 
 .if-user-logged-out {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
+  height: 10vh;
 }
 // .login-but {
 //   display: inline-block;
@@ -24,6 +28,9 @@ body.homepage #page-header-wrapper {
 .header {
   color: white;
   margin-left: 1%;
+  // margin-bottom: 2%;
+  // vertical-align: middle;
+
 }
 
 body, div, nav, h2, h1, h3, button, html, p {
@@ -71,7 +78,8 @@ body, div, nav, h2, h1, h3, button, html, p {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  margin: 25px 0;
+  align-items: center
+  // margin: 25px 0;
   // outline: none;
   img {
     border-radius: 50%;
