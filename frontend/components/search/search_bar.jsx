@@ -63,11 +63,11 @@ class SearchBar extends React.Component {
                 <span>{ song.title }</span>
                 <span className='search-username'>{ song.user.username }</span>
               </div>
-            
+
             </div>
-          
+
           </li>
-      </Link>);
+        </Link>);
       });
       return mappedResults;
     } else {
