@@ -8,15 +8,16 @@ import { selectListOfSongs, selectAllSongs } from './reducers/selectors';
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ****For development purposes****
   // window.dispatch = store.dispatch;
-  window.deleteSong = deleteSong;
-  window.createSong = createSong;
-  window.selectListOfSongs = selectListOfSongs;
-  window.selectAllSongs = selectAllSongs;
+  // window.deleteSong = deleteSong;
+  // window.createSong = createSong;
+  // window.selectListOfSongs = selectListOfSongs;
+  // window.selectAllSongs = selectAllSongs;
+  // window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
   let store;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
